@@ -8,6 +8,11 @@
   }
 }
 
+.nav-wrapper > ul {
+  width: 100%;
+  padding-left: 250px;
+}
+
 .nav-wrapper > ul:after {
   content: "";
   display: table;

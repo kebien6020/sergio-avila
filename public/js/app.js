@@ -85,6 +85,7 @@ module.exports = __webpack_require__(6);
 
 __webpack_require__(2);
 
+// Navbar search button behavior
 var searchElems = document.querySelectorAll('.nav-wrapper li.search');
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
@@ -116,6 +117,8 @@ try {
       };
     });
   }
+
+  // Position nav options depending on img width
 } catch (err) {
   _didIteratorError = true;
   _iteratorError = err;
@@ -130,6 +133,11 @@ try {
     }
   }
 }
+
+var $navOptions = document.querySelector('.nav-wrapper > ul');
+var $logoImg = document.querySelector('.brand-logo img');
+
+$navOptions.style.paddingLeft = $logoImg.width + 'px';
 
 /***/ }),
 /* 2 */

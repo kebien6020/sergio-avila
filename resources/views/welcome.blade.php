@@ -23,13 +23,13 @@
       <header>
         <nav aria-role="navigation">
           <div class="nav-wrapper grey darken-4">
-            <a href="#" class="brand-logo center">
+            <a href="#" class="brand-logo">
               <img src="/images/logo.png" alt="Logo de la Empresa">
             </a>
             <a href="#" data-target="sidenav-mobile" class="sidenav-trigger">
               <i class="material-icons">menu</i>
             </a>
-            <ul id="nav-mobile" class="right">
+            <ul id="nav-mobile">
               <li><a href="#">Catálogo</a></li>
               <li><a href="#">Categorías</a></li>
               <li class="search">

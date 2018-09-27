@@ -7,7 +7,7 @@
 
 require('./bootstrap');
 
-
+// Navbar search button behavior
 const searchElems = document.querySelectorAll('.nav-wrapper li.search')
 for (const $elem of searchElems) {
   $elem.addEventListener('click', function(event) {
@@ -30,3 +30,10 @@ for (const $elem of searchElems) {
     }
   })
 }
+
+
+// Position nav options depending on img width
+const $navOptions = document.querySelector('.nav-wrapper > ul')
+const $logoImg = document.querySelector('.brand-logo img')
+
+$navOptions.style.paddingLeft = $logoImg.width + 'px'

@@ -25,6 +25,8 @@
 
 .nav-wrapper > ul {
   @include clearfix;
+  width: 100%;
+  padding-left: 250px;  // Initial estimate, overriden by js
   & > li {
     @media #{$medium-and-down} {
       display: none;
