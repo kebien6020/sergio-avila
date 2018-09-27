@@ -11,7 +11,15 @@ const mix = require('laravel-mix')
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .extract(['materialize-css'])
-   .sass('resources/sass/app.scss', 'public/css')
+mix
+  .webpackConfig({
+    // CDN loaded libraries
+    externals: {
+        'axios': 'axios',
+        'materialize-css': 'M',
+    }
+  })
+  .js('resources/js/app.js', 'public/js')
+  .sass('resources/sass/app.scss', 'public/css')
+  .sass('resources/sass/vendor.scss', 'public/css')
   .browserSync('sergio.test')

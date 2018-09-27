@@ -1,5 +1,7 @@
 // window.Popper = require('popper.js').default;
 
+const M = require('materialize-css')
+M.AutoInit()
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
