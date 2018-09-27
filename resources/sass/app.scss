@@ -1,0 +1,61 @@
+// for media querys
+@import '~materialize-css/sass/components/color-variables';
+@import '~materialize-css/sass/components/variables';
+
+@mixin nav-height {
+  height: $navbar-height-mobile;
+  @media #{$medium-and-up} {
+    height: $navbar-height;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.nav-wrapper {
+  .brand-logo > img {
+    @include nav-height;
+  }
+}
+
+.nav-wrapper > ul {
+  @include clearfix;
+  & > li {
+    @media #{$medium-and-down} {
+      display: none;
+    }
+  }
+  & > .search {
+    display: block;
+    float: right;
+    & > a {
+      padding-left: 0;
+      padding-right: 0;
+      @include nav-height;
+
+      input[type="search"] {
+        width: 0;
+      }
+    }
+    &.show {
+      width: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      z-index: 10;
+
+      input[type="search"] {
+        width: 100%;
+      }
+    }
+  }
+}
+
+nav ul a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
