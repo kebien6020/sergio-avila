@@ -21,69 +21,7 @@
     </head>
     <body>
       <header>
-        <nav aria-role="navigation">
-          <div class="nav-wrapper grey darken-4">
-            <a href="#" class="brand-logo">
-              <img src="/images/logo.png" alt="Logo de la Empresa">
-            </a>
-            <a href="#" data-target="sidenav-mobile" class="sidenav-trigger">
-              <i class="material-icons">menu</i>
-            </a>
-            <ul id="nav-mobile">
-              <li>
-                <a href="#" class="dropdown-trigger dropdown-outer" data-target="catalog-dropdown">Catálogo</a>
-                <ul id="catalog-dropdown" class="dropdown-content dropdown-outer">
-                  <li><a href="#!">Busqueda avanzada</a></li>
-                  <li>
-                    <a
-                      href="#!"
-                      class="dropdown-trigger dropdown-nested"
-                      data-target="category-dropdown"
-                    >
-                      Por categoría
-                    </a>
-                    <ul
-                      id="category-dropdown"
-                      class="dropdown-content dropdown-nested"
-                    >
-                      <li><a href="#">Agendas</a></li>
-                      <li><a href="#">Bebidas</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#!">Digitales</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Categorías</a></li>
-              <li class="search">
-                <a href="#">
-                  <form>
-                    <div class="input-field">
-                      <input id="search" type="search">
-                      <label class="label-icon" for="search">
-                        <i class="material-icons">search</i>
-                      </label>
-                      <i class="material-icons">close</i>
-                    </div>
-                  </form>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {{-- Nested dropdowns --}}
-          {{-- <ul
-            id="category-dropdown"
-            class="dropdown-content dropdown-nested"
-          >
-            <li><a href="#">Agendas</a></li>
-            <li><a href="#">Bebidas</a></li>
-          </ul> --}}
-
-          <ul class="sidenav" id="sidenav-mobile">
-            <li><a href="#">Catálogo</a></li>
-            <li><a href="#">Categorías</a></li>
-          </ul>
-        </nav>
+        @include('partials/navbar')
       </header>
 
 
