@@ -23,3 +23,8 @@ mix
   .sass('resources/sass/app.scss', 'public/css')
   .sass('resources/sass/vendor.scss', 'public/css')
   .browserSync('sergio.test')
+
+// View specific js
+;['home'].forEach(view => {
+  mix.js(`resources/js/${view}.js`, 'public/js')
+})

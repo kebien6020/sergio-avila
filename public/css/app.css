@@ -71,3 +71,12 @@ nav .dropdown-content.dropdown-nested {
   left: 0 !important;
 }
 
+.about .parallax-container {
+  height: 350px;
+}
+
+.about .about-text {
+  color: white;
+  text-align: center;
+}
+

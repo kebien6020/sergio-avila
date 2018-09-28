@@ -24,7 +24,17 @@
         @include('partials/navbar')
       </header>
 
-
+      <main>
+        <section class="about">
+          <div class="parallax-container">
+            <div class="parallax"><img src="/images/about-bg.jpg"></div>
+            <div class="about-text">
+              <h2>Sobre nosotros</h2>
+              <h5>Texto sobre nosotros</h5>
+            </div>
+          </div>
+        </section>
+      </main>
 
       {{-- Scripts --}}
       {{-- CDN --}}
@@ -34,5 +44,8 @@
       {{-- <script src="/js/manifest.js" type="text/javascript" charset="utf-8"></script> --}}
       {{-- <script src="/js/vendor.js" type="text/javascript" charset="utf-8"></script> --}}
       <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
+
+      {{-- View specific js --}}
+      <script src="/js/home.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
