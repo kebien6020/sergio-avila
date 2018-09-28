@@ -62,3 +62,12 @@ nav ul a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+nav .dropdown-content.dropdown-outer {
+  overflow-y: visible;
+}
+
+nav .dropdown-content.dropdown-nested {
+  margin-left: 100%;
+  left: 0 !important;
+}
+

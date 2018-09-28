@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+const M = require('materialize-css')
+
 // Navbar search button behavior
 const searchElems = document.querySelectorAll('.nav-wrapper li.search')
 for (const $elem of searchElems) {
@@ -37,3 +39,21 @@ const $navOptions = document.querySelector('.nav-wrapper > ul')
 const $logoImg = document.querySelector('.brand-logo img')
 
 $navOptions.style.paddingLeft = $logoImg.width + 'px'
+
+
+// Initialize nav dropdowns
+const outerDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-outer')
+M.Dropdown.init(outerDropdown, {
+  hover: false,
+  constrainWidth: false,
+  coverTrigger: false,
+})
+
+const nestedDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-nested')
+for ($elem of nestedDropdown) {
+  M.Dropdown.init($elem, {
+    hover: true,
+    constrainWidth: false,
+    coverTrigger: true,
+  })
+}

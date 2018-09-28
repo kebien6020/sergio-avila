@@ -60,20 +60,26 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = M;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
+__webpack_require__(2);
 __webpack_require__(5);
 module.exports = __webpack_require__(6);
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -83,7 +89,9 @@ module.exports = __webpack_require__(6);
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
-__webpack_require__(2);
+__webpack_require__(3);
+
+var M = __webpack_require__(0);
 
 // Navbar search button behavior
 var searchElems = document.querySelectorAll('.nav-wrapper li.search');
@@ -93,9 +101,9 @@ var _iteratorError = undefined;
 
 try {
   for (var _iterator = searchElems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var $elem = _step.value;
+    var _$elem = _step.value;
 
-    $elem.addEventListener('click', function (event) {
+    _$elem.addEventListener('click', function (event) {
       var _this = this;
 
       var hasFocus = function hasFocus($elem) {
@@ -139,14 +147,49 @@ var $logoImg = document.querySelector('.brand-logo img');
 
 $navOptions.style.paddingLeft = $logoImg.width + 'px';
 
+// Initialize nav dropdowns
+var outerDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-outer');
+M.Dropdown.init(outerDropdown, {
+  hover: false,
+  constrainWidth: false,
+  coverTrigger: false
+});
+
+var nestedDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-nested');
+var _iteratorNormalCompletion2 = true;
+var _didIteratorError2 = false;
+var _iteratorError2 = undefined;
+
+try {
+  for (var _iterator2 = nestedDropdown[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    $elem = _step2.value;
+
+    M.Dropdown.init($elem, {
+      hover: true,
+      constrainWidth: false,
+      coverTrigger: true
+    });
+  }
+} catch (err) {
+  _didIteratorError2 = true;
+  _iteratorError2 = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion2 && _iterator2.return) {
+      _iterator2.return();
+    }
+  } finally {
+    if (_didIteratorError2) {
+      throw _iteratorError2;
+    }
+  }
+}
+
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // window.Popper = require('popper.js').default;
-
-var M = __webpack_require__(3);
-M.AutoInit();
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -188,12 +231,6 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = M;
 
 /***/ }),
 /* 4 */
