@@ -46,18 +46,9 @@ $navOptions.style.paddingLeft = $logoImg.width + 'px'
 
 
 // Initialize nav dropdowns
-const outerDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-outer')
-M.Dropdown.init(outerDropdown, {
-  hover: false,
-  constrainWidth: false,
-  coverTrigger: false,
-})
-
-const nestedDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-nested')
-for ($elem of nestedDropdown) {
-  M.Dropdown.init($elem, {
-    hover: true,
-    constrainWidth: false,
-    coverTrigger: true,
-  })
-}
+// const outerDropdown = document.querySelectorAll('nav .dropdown-trigger')
+// M.Dropdown.init(outerDropdown, {
+//   hover: false,
+//   constrainWidth: false,
+//   coverTrigger: false,
+// })

@@ -101,9 +101,9 @@ var _iteratorError = undefined;
 
 try {
   for (var _iterator = searchElems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var _$elem = _step.value;
+    var $elem = _step.value;
 
-    _$elem.addEventListener('click', function (event) {
+    $elem.addEventListener('click', function (event) {
       var _this = this;
 
       var hasFocus = function hasFocus($elem) {
@@ -152,42 +152,12 @@ var $logoImg = document.querySelector('.brand-logo img');
 $navOptions.style.paddingLeft = $logoImg.width + 'px';
 
 // Initialize nav dropdowns
-var outerDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-outer');
-M.Dropdown.init(outerDropdown, {
-  hover: false,
-  constrainWidth: false,
-  coverTrigger: false
-});
-
-var nestedDropdown = document.querySelectorAll('nav .dropdown-trigger.dropdown-nested');
-var _iteratorNormalCompletion2 = true;
-var _didIteratorError2 = false;
-var _iteratorError2 = undefined;
-
-try {
-  for (var _iterator2 = nestedDropdown[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-    $elem = _step2.value;
-
-    M.Dropdown.init($elem, {
-      hover: true,
-      constrainWidth: false,
-      coverTrigger: true
-    });
-  }
-} catch (err) {
-  _didIteratorError2 = true;
-  _iteratorError2 = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion2 && _iterator2.return) {
-      _iterator2.return();
-    }
-  } finally {
-    if (_didIteratorError2) {
-      throw _iteratorError2;
-    }
-  }
-}
+// const outerDropdown = document.querySelectorAll('nav .dropdown-trigger')
+// M.Dropdown.init(outerDropdown, {
+//   hover: false,
+//   constrainWidth: false,
+//   coverTrigger: false,
+// })
 
 /***/ }),
 /* 3 */
