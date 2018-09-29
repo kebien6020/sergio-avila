@@ -124,7 +124,7 @@ try {
 
       var img = this.querySelector('.card-image img');
       if (img) {
-        img.parentElement.style.height = img.height + 'px';
+        img.parentElement.style.height = '0';
       }
 
       setTimeout(function () {
@@ -162,18 +162,23 @@ scrim.addEventListener('click', function () {
     for (var _iterator2 = outerCards[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       $elem = _step2.value;
 
+      if (!$elem.classList.contains('expanded')) continue;
       $elem.classList.add('hoverable');
       $elem.classList.remove('z-depth-5');
       $elem.classList.remove('expanded');
 
       $elem.removeAttribute('style');
 
-      setTimeout(function () {
-        var img = $elem.querySelector('.card-image img');
-        if (img) {
-          img.parentElement.style.height = img.height + 'px';
-        }
-      }, 300);
+      // Using closure to preserve $elem since the loop ends before the
+      // callback to setTimeout triggers
+      setTimeout(function ($elem) {
+        return function () {
+          var img = $elem.querySelector('.card-image img');
+          if (img) {
+            img.parentElement.style.height = img.height + 'px';
+          }
+        };
+      }($elem), 300);
 
       var inner = $elem.querySelector('.subcategory-container');
       if (inner) inner.style.display = 'none';

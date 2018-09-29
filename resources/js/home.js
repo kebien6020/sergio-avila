@@ -30,7 +30,7 @@ for ($elem of outerCards) {
 
     const img = this.querySelector('.card-image img')
     if (img) {
-      img.parentElement.style.height = img.height + 'px'
+      img.parentElement.style.height = '0'
     }
 
     setTimeout(() => {
@@ -48,18 +48,21 @@ for ($elem of outerCards) {
 scrim.addEventListener('click', () => {
   scrim.classList.remove('show')
   for ($elem of outerCards) {
+    if (!$elem.classList.contains('expanded')) continue
     $elem.classList.add('hoverable')
     $elem.classList.remove('z-depth-5')
     $elem.classList.remove('expanded')
 
     $elem.removeAttribute('style')
 
-    setTimeout(() => {
+    // Using closure to preserve $elem since the loop ends before the
+    // callback to setTimeout triggers
+    setTimeout((($elem) => (() => {
       const img = $elem.querySelector('.card-image img')
       if (img) {
         img.parentElement.style.height = img.height + 'px'
       }
-    }, 300)
+    }))($elem), 300)
 
     const inner = $elem.querySelector('.subcategory-container')
     if (inner) inner.style.display = 'none'
