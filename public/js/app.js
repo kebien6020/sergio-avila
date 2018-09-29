@@ -126,7 +126,7 @@ try {
     });
   }
 
-  // Position nav options depending on img width
+  // Sidenav
 } catch (err) {
   _didIteratorError = true;
   _iteratorError = err;
@@ -142,6 +142,10 @@ try {
   }
 }
 
+var sidenavTriggers = document.querySelectorAll('.sidenav');
+M.Sidenav.init(sidenavTriggers);
+
+// Position nav options depending on img width
 var $navOptions = document.querySelector('.nav-wrapper > ul');
 var $logoImg = document.querySelector('.brand-logo img');
 

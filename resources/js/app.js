@@ -33,6 +33,10 @@ for (const $elem of searchElems) {
   })
 }
 
+// Sidenav
+const sidenavTriggers = document.querySelectorAll('.sidenav')
+M.Sidenav.init(sidenavTriggers)
+
 
 // Position nav options depending on img width
 const $navOptions = document.querySelector('.nav-wrapper > ul')

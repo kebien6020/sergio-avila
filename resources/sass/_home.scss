@@ -7,3 +7,124 @@
     text-align: center;
   }
 }
+
+#categories {
+
+  h3 {
+    text-align: center;
+  }
+
+  $card-transition: all 0.2s ease-out;
+
+  .card {
+    color: black;
+  }
+
+  .subcategory-container {
+    display: none;
+
+    opacity: 0;
+    width: 650px;
+    height: 240px;
+    transform: scaleX(0) scaleY(0);
+    transform-origin: top left;
+
+    transition: $card-transition;
+
+    .card {
+        overflow: hidden;
+        height: 0;
+    }
+
+    .card-content {
+      padding: 8px 16px;
+      margin: 0;
+    }
+  }
+
+  .card.card-outer {
+    transition: $card-transition;
+
+    & > .card-image, & > .card-image img {
+      transition: $card-transition;
+      opacity: 1;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+
+  }
+
+  .card-content {
+    border-top: 1px solid rgba(0,0,0,0.2);
+  }
+
+
+  .card.card-outer.expanded {
+    position: fixed !important;
+    top: 50vh !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 340px !important;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+
+    @media #{$medium-and-up} {
+      left: 50vw  !important;
+      transform: translateX(-50%) translateY(-50%);
+      width: 85%  !important;
+      height: 410px !important;
+    }
+
+    @media #{$large-and-up} {
+      width: 70%  !important;
+      height: 440px !important;
+    }
+
+    & > .card-image, & > .card-image img {
+      width: 0;
+      opacity: 0;
+      left: 0;
+      top: 0;
+      right: auto;
+    }
+
+    & > .card-content {
+      border-top-width: 0;
+    }
+
+    .subcategory-container {
+      display: flex;
+      flex-direction: row;
+      // justify-content: space-around;
+
+      transform: scaleX(1) scaleY(1);
+      width: 100%;
+      height: 250px;
+      opacity: 1.0;
+
+      padding-left: 16px;
+      padding-right: 16px;
+
+      .inner-card-wrapper {
+        flex: 1;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .card {
+        height: 220px;
+
+        @media #{$medium-and-up} {
+          height: 300px;
+        }
+        @media #{$large-and-up} {
+          height: 320px;
+        }
+      }
+    }
+  }
+
+}
