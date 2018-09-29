@@ -124,7 +124,7 @@ try {
 
       var img = this.querySelector('.card-image img');
       if (img) {
-        img.parentElement.style.height = img.height;
+        img.parentElement.style.height = img.height + 'px';
       }
 
       setTimeout(function () {
@@ -171,9 +171,9 @@ scrim.addEventListener('click', function () {
       setTimeout(function () {
         var img = $elem.querySelector('.card-image img');
         if (img) {
-          img.parentElement.style.height = img.height;
+          img.parentElement.style.height = img.height + 'px';
         }
-      }, 200);
+      }, 300);
 
       var inner = $elem.querySelector('.subcategory-container');
       if (inner) inner.style.display = 'none';

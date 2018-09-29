@@ -39,19 +39,43 @@
           <?php
             $categs = [
               ['Agendas', 'agendas'],
-              ['Bebidas', 'bebidas'],
+              ['Bebidas', 'bebidas', [
+                ['Botilitos', 'botilitos'],
+                ['Mugs, Tazas y Vasos', 'mugs'],
+              ]],
               ['Bienestar', 'bienestar', [
-                  ['Anti-stress', 'anti-stress'],
-                  ['Belleza', 'belleza'],
-                  ['Salud', 'salud'],
+                ['Anti-stress', 'anti-stress'],
+                ['Belleza', 'belleza'],
+                ['Salud', 'salud'],
               ]],
               ['Herramientas', 'herramientas'],
-              ['Hogar', 'hogar'],
+              ['Hogar', 'hogar', [
+                ['Bar', 'bar'],
+                ['Hogar', 'hogar'],
+                ['Relojes y Portarretratos', 'relojes'],
+              ]],
               ['Niños', 'ninos'],
-              ['Oficina', 'oficina'],
-              ['Tecnología', 'tecnologia'],
-              ['Textiles', 'textiles'],
-              ['Tiempo Libre', 'tiempo-libre'],
+              ['Oficina', 'oficina', [
+                ['Boligrafos', 'boligrafos'],
+                ['Libretas y Carpetas', 'libretas'],
+                ['Llaveros', 'llaveros'],
+                ['Oficina', 'oficina'],
+              ]],
+              ['Tecnología', 'tecnologia', [
+                ['Accesorios de cómputo y USB', 'acc-computo'],
+                ['Accesorios de smartphone y tablet', 'acc-cel'],
+                ['Audio y bocinas', 'audio']
+              ]],
+              ['Textiles', 'textiles', [
+                ['Bolsas', 'bolsas'],
+                ['Gorras', 'gorras'],
+                ['Hieleras y loncheras', 'loncheras'],
+                ['Maletas', 'maletas'],
+                ['Mochilas', 'mochilas'],
+                ['Paraguas', 'paraguas'],
+                ['Portafolios', 'portafolios'],
+              ]],
+              ['Viaje', 'viaje'],
             ]
           ?>
           <div class="row">

@@ -74,12 +74,12 @@
     @media #{$medium-and-up} {
       left: 50vw  !important;
       transform: translateX(-50%) translateY(-50%);
-      width: 85%  !important;
+      width: 90%  !important;
       height: 410px !important;
     }
 
     @media #{$large-and-up} {
-      width: 70%  !important;
+      width: 85%  !important;
       height: 440px !important;
     }
 
@@ -98,7 +98,7 @@
     .subcategory-container {
       display: flex;
       flex-direction: row;
-      // justify-content: space-around;
+      justify-content: space-around;
 
       transform: scaleX(1) scaleY(1);
       width: 100%;
@@ -109,19 +109,22 @@
       padding-right: 16px;
 
       .inner-card-wrapper {
-        flex: 1;
         padding-left: 8px;
         padding-right: 8px;
       }
 
       .card {
         height: 220px;
+        min-width: 130px;
+        max-width: 170px;
 
         @media #{$medium-and-up} {
           height: 300px;
+          max-width: 240px;
         }
         @media #{$large-and-up} {
           height: 320px;
+          max-width: 250px;
         }
       }
     }

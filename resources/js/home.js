@@ -30,7 +30,7 @@ for ($elem of outerCards) {
 
     const img = this.querySelector('.card-image img')
     if (img) {
-      img.parentElement.style.height = img.height
+      img.parentElement.style.height = img.height + 'px'
     }
 
     setTimeout(() => {
@@ -57,9 +57,9 @@ scrim.addEventListener('click', () => {
     setTimeout(() => {
       const img = $elem.querySelector('.card-image img')
       if (img) {
-        img.parentElement.style.height = img.height
+        img.parentElement.style.height = img.height + 'px'
       }
-    }, 200)
+    }, 300)
 
     const inner = $elem.querySelector('.subcategory-container')
     if (inner) inner.style.display = 'none'
