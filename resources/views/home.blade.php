@@ -1,6 +1,7 @@
 @extends('layout')
 
-@section('name', 'home')
+@section('class', 'home')
+@section('js', 'home')
 
 @section('content')
 

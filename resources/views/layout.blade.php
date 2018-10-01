@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="@yield('class', '')">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,6 +42,8 @@
       <script src="/js/app.js" type="text/javascript" charset="utf-8"></script>
 
       {{-- View specific js --}}
-      <script src="/js/@yield('name').js" type="text/javascript" charset="utf-8"></script>
+      @if(array_key_exists('js', View::getSections()))
+        <script src="/js/@yield('js').js" type="text/javascript" charset="utf-8"></script>
+      @endif
     </body>
 </html>
