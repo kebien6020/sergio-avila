@@ -60,9 +60,9 @@ scrim.addEventListener('click', () => {
     setTimeout((($elem) => (() => {
       const img = $elem.querySelector('.card-image img')
       if (img) {
-        img.parentElement.style.height = img.height + 'px'
+        img.parentElement.style.height = 'auto'
       }
-    }))($elem), 300)
+    }))($elem), 200)
 
     const inner = $elem.querySelector('.subcategory-container')
     if (inner) inner.style.display = 'none'
