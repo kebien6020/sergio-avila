@@ -1,6 +1,35 @@
 html.search {
 
+.container {
+  @media #{$large-and-up} {
+    width: 85%;
+  }
+}
 
+.category-list {
+  .collapsible-body {
+    padding: 0;
+  }
+
+  .collapsible-header {
+    background-color: $primary-color-dark;
+    color: white;
+  }
+}
+
+.results {
+  .masonry-item {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 250px;
+  }
+
+  a {
+    display: block;
+    color: initial;
+  }
+
+}
 
 
 } // html.search

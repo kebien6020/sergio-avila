@@ -17,6 +17,8 @@ mix
     externals: {
         'axios': 'axios',
         'materialize-css': 'M',
+        'masonry': 'Masonry',
+        'imagesloaded': 'imagesLoaded',
     }
   })
   .js('resources/js/app.js', 'public/js')
@@ -25,6 +27,6 @@ mix
   .browserSync('sergio.test')
 
 // View specific js
-;['home'].forEach(view => {
+;['home', 'search'].forEach(view => {
   mix.js(`resources/js/${view}.js`, 'public/js')
 })

@@ -11,10 +11,38 @@
 |
 */
 
+use App\Item;
+use App\Family;
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/search', function () {
-    return view('search');
+Route::get('/search', function (Request $req) {
+
+    $codes = false;
+
+    $items = Item::with(['images', 'family']);
+    if ($req->has('fam')) {
+      $codes = json_decode($req->query('fam'), true);
+      if (!is_null($codes)) {
+        $items = $items->whereIn('family_code', $codes);
+      }
+    }
+    $items = $items->get();
+
+
+    $families = collect();
+    if ($codes) {
+      $families = Family::whereIn('code', $codes);
+    } else {
+      $families = Family::all();
+    }
+    $families = $families->get();
+
+    return view('search', [
+      'items' => $items,
+      'families' => $families
+    ]);
 });
