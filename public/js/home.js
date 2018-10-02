@@ -100,7 +100,7 @@ var _iteratorError = undefined;
 
 try {
   for (var _iterator = outerCards[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    $elem = _step.value;
+    var $elem = _step.value;
 
     $elem.addEventListener('click', function (event) {
       var _this = this;
@@ -108,8 +108,6 @@ try {
       var inner = this.querySelector('.subcategory-container');
       if (!inner) return;
       inner.style.display = 'flex';
-
-      event.preventDefault();
 
       // Convert to position fixed before animation
       var xCoord = this.offsetLeft - window.pageXOffset;
@@ -160,14 +158,14 @@ scrim.addEventListener('click', function () {
 
   try {
     for (var _iterator2 = outerCards[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      $elem = _step2.value;
+      var _$elem = _step2.value;
 
-      if (!$elem.classList.contains('expanded')) continue;
-      $elem.classList.add('hoverable');
-      $elem.classList.remove('z-depth-5');
-      $elem.classList.remove('expanded');
+      if (!_$elem.classList.contains('expanded')) continue;
+      _$elem.classList.add('hoverable');
+      _$elem.classList.remove('z-depth-5');
+      _$elem.classList.remove('expanded');
 
-      $elem.removeAttribute('style');
+      _$elem.removeAttribute('style');
 
       // Using closure to preserve $elem since the loop ends before the
       // callback to setTimeout triggers
@@ -178,9 +176,9 @@ scrim.addEventListener('click', function () {
             img.parentElement.style.height = 'auto';
           }
         };
-      }($elem), 200);
+      }(_$elem), 200);
 
-      var inner = $elem.querySelector('.subcategory-container');
+      var inner = _$elem.querySelector('.subcategory-container');
       if (inner) inner.style.display = 'none';
     }
   } catch (err) {

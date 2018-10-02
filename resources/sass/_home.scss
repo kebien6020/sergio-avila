@@ -16,7 +16,7 @@
 
   $card-transition: all 0.2s ease-out;
 
-  .card {
+  a {
     color: black;
   }
 
@@ -111,6 +111,11 @@
       .inner-card-wrapper {
         padding-left: 8px;
         padding-right: 8px;
+      }
+
+      a {
+        display: block;
+        z-index: 200;
       }
 
       .card {

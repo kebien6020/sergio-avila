@@ -19,49 +19,63 @@
   <h3>Categorías</h3>
   <?php
     $categs = [
-      ['Agendas', 'agendas'],
+      ['Agendas', 'agendas', 'fam' => [3]],
       ['Bebidas', 'bebidas', [
-        ['Botilitos', 'botilitos'],
-        ['Mugs, Tazas y Vasos', 'mugs'],
+        ['Botilitos', 'botilitos', 'fam' => [15, 16]],
+        ['Mugs, Tazas y Vasos', 'mugs', 'fam' => [33, 34, 35]],
       ]],
       ['Bienestar', 'bienestar', [
-        ['Anti-stress', 'anti-stress'],
-        ['Belleza', 'belleza'],
-        ['Salud', 'salud'],
+        ['Anti-stress', 'anti-stress', 'fam' => [4]],
+        ['Belleza', 'belleza', 'fam' => [9]],
+        ['Salud', 'salud', 'fam' => [32]],
       ]],
-      ['Herramientas', 'herramientas'],
+      ['Herramientas', 'herramientas', 'fam' => [18]],
       ['Hogar', 'hogar', [
-        ['Bar', 'bar'],
-        ['Hogar', 'hogar'],
-        ['Relojes y Portarretratos', 'relojes'],
+        ['Bar', 'bar', 'fam' => [8]],
+        ['Hogar', 'hogar', 'fam' => [20]],
+        ['Relojes y Portarretratos', 'relojes', 'fam' => [30, 31]],
       ]],
-      ['Niños', 'ninos'],
+      ['Niños', 'ninos', 'fam' => [27]],
       ['Oficina', 'oficina', [
-        ['Boligrafos', 'boligrafos'],
-        ['Libretas y Carpetas', 'libretas'],
-        ['Llaveros', 'llaveros'],
-        ['Oficina', 'oficina'],
+        ['Boligrafos', 'boligrafos', 'fam' => [10, 11, 12]],
+        ['Libretas y Carpetas', 'libretas', 'fam' => [14, 22]],
+        ['Llaveros', 'llaveros', 'fam' => [23, 24]],
+        ['Oficina', 'oficina', 'fam' => [5]],
       ]],
       ['Tecnología', 'tecnologia', [
-        ['Accesorios de cómputo y USB', 'acc-computo'],
-        ['Accesorios de smartphone y tablet', 'acc-cel'],
-        ['Audio y bocinas', 'audio']
+        ['Accesorios de cómputo y USB', 'acc-computo', 'fam' => [1, 36]],
+        ['Accesorios de smartphone y tablet', 'acc-cel', 'fam' => [2]],
+        ['Audio y bocinas', 'audio', 'fam' => [7]]
       ]],
       ['Textiles', 'textiles', [
-        ['Bolsas', 'bolsas'],
-        ['Gorras', 'gorras'],
-        ['Hieleras y loncheras', 'loncheras'],
-        ['Maletas', 'maletas'],
-        ['Mochilas', 'mochilas'],
-        ['Paraguas', 'paraguas'],
-        ['Portafolios', 'portafolios'],
+        ['Bolsas', 'bolsas', 'fam' => [13]],
+        ['Gorras', 'gorras', 'fam' => [17]],
+        ['Hieleras y loncheras', 'loncheras', 'fam' => [19]],
+        ['Maletas', 'maletas', 'fam' => [25]],
+        ['Mochilas', 'mochilas', 'fam' => [26]],
+        ['Paraguas', 'paraguas', 'fam' => [28]],
+        ['Portafolios', 'portafolios', 'fam' => [29]],
       ]],
-      ['Viaje', 'viaje'],
-    ]
+      ['Viaje', 'viaje', 'fam' => [6]],
+    ];
+
+    function genCategLinkTagOpen($categ) {
+      if (!array_key_exists('fam', $categ)) {
+        return '';
+      }
+      return '<a href="/search?fam=' . collect($categ['fam'])->toJson(). '">';
+    }
+
+    function genCategLinkTagClose($categ) {
+      if (!array_key_exists('fam', $categ)) {
+        return '';
+      }
+      return '</a>';
+    }
   ?>
   <div class="row">
     @foreach ($categs as $categ)
-      <a href="#">
+      {!! genCategLinkTagOpen($categ) !!}
         <div class="col s6 m4 l3">
           <div class="card hoverable card-outer">
             <div class="card-image">
@@ -72,8 +86,9 @@
             </div>
             @if (array_key_exists(2, $categ))
               <div class="subcategory-container">
-                  @foreach ($categ[2] as $subcateg)
-                    <div class="inner-card-wrapper">
+                @foreach ($categ[2] as $subcateg)
+                  <div class="inner-card-wrapper">
+                    {!! genCategLinkTagOpen($subcateg) !!}
                       <div class="card hoverable">
                         <div class="card-image">
                           <img src="images/categ-{{$subcateg[1]}}.jpg">
@@ -82,13 +97,14 @@
                           <span class="card-title">{{$subcateg[0]}}</span>
                         </div>
                       </div>
-                    </div>
-                  @endforeach
+                    {!! genCategLinkTagClose($subcateg) !!}
+                  </div>
+                @endforeach
               </div>
             @endif
           </div>
         </div>
-      </a>
+      {!! genCategLinkTagClose($categ) !!}
     @endforeach
   </div>
 </section>

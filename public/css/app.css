@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-#categories .card {
+#categories a {
   color: black;
 }
 
@@ -122,6 +122,11 @@
 #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper {
   padding-left: 8px;
   padding-right: 8px;
+}
+
+#categories .card.card-outer.expanded .subcategory-container a {
+  display: block;
+  z-index: 200;
 }
 
 #categories .card.card-outer.expanded .subcategory-container .card {

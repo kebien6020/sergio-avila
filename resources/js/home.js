@@ -9,13 +9,11 @@ M.Parallax.init(parallaxElems)
 // Card expansion
 const outerCards = document.querySelectorAll('.card-outer')
 const scrim = document.getElementById('scrim')
-for ($elem of outerCards) {
+for (const $elem of outerCards) {
   $elem.addEventListener('click', function(event) {
     const inner = this.querySelector('.subcategory-container')
     if (!inner) return
     inner.style.display = 'flex'
-
-    event.preventDefault()
 
     // Convert to position fixed before animation
     const xCoord = this.offsetLeft - window.pageXOffset
@@ -47,7 +45,7 @@ for ($elem of outerCards) {
 
 scrim.addEventListener('click', () => {
   scrim.classList.remove('show')
-  for ($elem of outerCards) {
+  for (const $elem of outerCards) {
     if (!$elem.classList.contains('expanded')) continue
     $elem.classList.add('hoverable')
     $elem.classList.remove('z-depth-5')
