@@ -7,7 +7,7 @@
       <i class="material-icons">menu</i>
     </a>
     <ul id="nav-mobile">
-      <li><a href="#categories">Categorías</a></li>
+      <li><a href="/#categories">Categorías</a></li>
       <li><a href="#">Catálogo</a></li>
     </ul>
   </div>
