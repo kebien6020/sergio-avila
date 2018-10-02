@@ -1,0 +1,17 @@
+
+// Responsive height of the navbar
+@mixin nav-height {
+  height: $navbar-height-mobile;
+  @media #{$medium-and-up} {
+    height: $navbar-height;
+  }
+}
+
+// Easy clearfix without applying more classes to the html
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
