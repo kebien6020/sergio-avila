@@ -28,6 +28,12 @@ body {
   }
 }
 
+.container {
+  @media #{$large-and-up} {
+    width: 85%;
+  }
+}
+
 // Navbar
 
 .nav-wrapper {

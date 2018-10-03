@@ -46,3 +46,14 @@ Route::get('/search', function (Request $req) {
       'families' => $families
     ]);
 });
+
+Route::get('/item/{code}', function ($code) {
+  $code = str_replace('-', ' ', $code);
+  $items = Item::where(['code' => $code])->get();
+  if ($items->count() <= 0) {
+    return abort(404);
+  }
+  return view('item', [
+    'item' => $items->first()
+  ]);
+});

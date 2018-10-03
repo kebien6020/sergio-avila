@@ -27,6 +27,6 @@ mix
   .browserSync('sergio.test')
 
 // View specific js
-;['home', 'search'].forEach(view => {
+;['home', 'search', 'item'].forEach(view => {
   mix.js(`resources/js/${view}.js`, 'public/js')
 })

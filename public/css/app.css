@@ -23,6 +23,12 @@ body {
   opacity: 0.3;
 }
 
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85%;
+  }
+}
+
 .nav-wrapper .brand-logo > img {
   height: 56px;
 }
@@ -247,12 +253,6 @@ html.home #categories .card.card-outer.expanded .subcategory-container .card {
   }
 }
 
-@media only screen and (min-width: 993px) {
-  html.search .container {
-    width: 85%;
-  }
-}
-
 html.search .category-list .collapsible-body {
   padding: 0;
 }
@@ -271,5 +271,54 @@ html.search .results .masonry-item {
 html.search .results a {
   display: block;
   color: initial;
+}
+
+html.item a.breadcrumb {
+  color: #039be5;
+}
+
+html.item .breadcrumb {
+  font-size: 12px;
+  vertical-align: baseline;
+  line-height: 48px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media only screen and (min-width: 601px) {
+  html.item .breadcrumb {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  html.item .breadcrumb {
+    font-size: 18px;
+  }
+}
+
+html.item .breadcrumb::before {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media only screen and (max-width: 600px) {
+  html.item .breadcrumb::before {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+html.item .thumbs {
+  width: 100%;
+}
+
+html.item .thumbs .thumb-img {
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+html.item .descr h3 {
+  margin-top: 8px;
 }
 
