@@ -93,3 +93,28 @@ nav {
     }
   }
 }
+
+// Breadcrumbs
+
+$black-text: rgba(0, 0, 0, 0.87);
+
+a.breadcrumb {
+  color: #039be5 !important;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  @media #{$medium-and-up} { font-size: 16px; }
+  @media #{$large-and-up} { font-size: 18px; }
+
+  vertical-align: baseline;
+  line-height: 48px;
+  color: $black-text !important;
+  &::before {
+    color: $black-text;
+    @media #{$small-and-down} {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}

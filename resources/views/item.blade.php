@@ -6,15 +6,18 @@
 @section('content')
 
 <div class="container">
+
+  {{-- Breadcrumbs --}}
   <div class="breadcrumbs row">
     <div class="col s12">
-      <a href="/#categories" class="breadcrumb">Categorias</a>
+      <a href="/#categories" class="breadcrumb">CATEGORÍAS</a>
       <a href="/search?fam=[{{$item->family_code}}]" class="breadcrumb">
         {{ $item->family->name }}
       </a>
       <span class="breadcrumb">{{ $item->code }}</span>
     </div>
   </div>
+
   <div class="row">
     <div class="col s12 l4">
       <div class="slider card">

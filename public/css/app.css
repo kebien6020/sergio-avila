@@ -102,6 +102,40 @@ nav .dropdown-content.dropdown-nested {
   left: 0 !important;
 }
 
+a.breadcrumb {
+  color: #039be5 !important;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  vertical-align: baseline;
+  line-height: 48px;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+@media only screen and (min-width: 601px) {
+  .breadcrumb {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .breadcrumb {
+    font-size: 18px;
+  }
+}
+
+.breadcrumb::before {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media only screen and (max-width: 600px) {
+  .breadcrumb::before {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 html.home .about .parallax-container {
   height: 350px;
 }
@@ -271,40 +305,6 @@ html.search .results .masonry-item {
 html.search .results a {
   display: block;
   color: initial;
-}
-
-html.item a.breadcrumb {
-  color: #039be5;
-}
-
-html.item .breadcrumb {
-  font-size: 12px;
-  vertical-align: baseline;
-  line-height: 48px;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-@media only screen and (min-width: 601px) {
-  html.item .breadcrumb {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  html.item .breadcrumb {
-    font-size: 18px;
-  }
-}
-
-html.item .breadcrumb::before {
-  color: rgba(0, 0, 0, 0.87);
-}
-
-@media only screen and (max-width: 600px) {
-  html.item .breadcrumb::before {
-    margin-right: 0;
-    margin-left: 0;
-  }
 }
 
 html.item .thumbs {

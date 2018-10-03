@@ -6,6 +6,16 @@
 @section('content')
 
 <div class="container">
+  {{-- Breadcrumbs --}}
+  <div class="breadcrumbs row">
+    <div class="col s12">
+      <a href="/#categories" class="breadcrumb">CATEGORÍAS</a>
+      <span class="breadcrumb">
+        {{ $families->pluck('name')->implode(', ') }}
+      </span>
+    </div>
+  </div>
+
   <div class="row">
     <section class="category-list col s12 l3">
       <ul class="collapsible">
