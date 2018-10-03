@@ -15,8 +15,8 @@
 
         {{-- Styles --}}
         {{-- Main styles --}}
-        <link type="text/css" rel="stylesheet" href="css/vendor.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="css/app.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="/css/vendor.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="/css/app.css"  media="screen,projection"/>
 
     </head>
     <body>
