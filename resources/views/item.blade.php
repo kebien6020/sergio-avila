@@ -23,7 +23,7 @@
       <div class="slider card">
         <ul class="slides">
           @foreach ($item->images as $image)
-            <li><img src="{!! $image->url !!}"></li>
+            <li><img class="materialboxed" src="{!! $image->url !!}"></li>
           @endforeach
         </ul>
       </div>

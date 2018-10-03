@@ -148,16 +148,49 @@ window.addEventListener('resize', function (event) {
   });
 }, false);
 
+var thumbnails = document.querySelectorAll('.thumb-img');
+
+var _loop = function _loop($thumb) {
+  $thumb.addEventListener('mouseenter', function () {
+    var _iteratorNormalCompletion5 = true;
+    var _didIteratorError5 = false;
+    var _iteratorError5 = undefined;
+
+    try {
+      for (var _iterator5 = sliders[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+        var slider = _step5.value;
+
+        slider.set($thumb.dataset.num);
+      }
+    } catch (err) {
+      _didIteratorError5 = true;
+      _iteratorError5 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion5 && _iterator5.return) {
+          _iterator5.return();
+        }
+      } finally {
+        if (_didIteratorError5) {
+          throw _iteratorError5;
+        }
+      }
+    }
+  });
+};
+
 var _iteratorNormalCompletion2 = true;
 var _didIteratorError2 = false;
 var _iteratorError2 = undefined;
 
 try {
-  for (var _iterator2 = sliders[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-    var slider = _step2.value;
+  for (var _iterator2 = thumbnails[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    var $thumb = _step2.value;
 
-    slider.pause();
+    _loop($thumb);
   }
+
+  // Material box for the image
 } catch (err) {
   _didIteratorError2 = true;
   _iteratorError2 = err;
@@ -173,19 +206,42 @@ try {
   }
 }
 
-var thumbnails = document.querySelectorAll('.thumb-img');
+var matBoxImages = document.querySelectorAll('.materialboxed');
+M.Materialbox.init(matBoxImages, {
+  onOpenStart: function onOpenStart() {
+    var _iteratorNormalCompletion3 = true;
+    var _didIteratorError3 = false;
+    var _iteratorError3 = undefined;
 
-var _loop = function _loop($thumb) {
-  $thumb.addEventListener('mouseenter', function () {
+    try {
+      for (var _iterator3 = sliders[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+        var slider = _step3.value;
+        slider.pause();
+      }
+    } catch (err) {
+      _didIteratorError3 = true;
+      _iteratorError3 = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion3 && _iterator3.return) {
+          _iterator3.return();
+        }
+      } finally {
+        if (_didIteratorError3) {
+          throw _iteratorError3;
+        }
+      }
+    }
+  },
+  onCloseEnd: function onCloseEnd() {
     var _iteratorNormalCompletion4 = true;
     var _didIteratorError4 = false;
     var _iteratorError4 = undefined;
 
     try {
       for (var _iterator4 = sliders[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-        var _slider = _step4.value;
-
-        _slider.set($thumb.dataset.num);
+        var slider = _step4.value;
+        slider.start;
       }
     } catch (err) {
       _didIteratorError4 = true;
@@ -201,33 +257,8 @@ var _loop = function _loop($thumb) {
         }
       }
     }
-  });
-};
-
-var _iteratorNormalCompletion3 = true;
-var _didIteratorError3 = false;
-var _iteratorError3 = undefined;
-
-try {
-  for (var _iterator3 = thumbnails[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-    var $thumb = _step3.value;
-
-    _loop($thumb);
   }
-} catch (err) {
-  _didIteratorError3 = true;
-  _iteratorError3 = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion3 && _iterator3.return) {
-      _iterator3.return();
-    }
-  } finally {
-    if (_didIteratorError3) {
-      throw _iteratorError3;
-    }
-  }
-}
+});
 
 /***/ })
 

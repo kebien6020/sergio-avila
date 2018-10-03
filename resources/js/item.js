@@ -40,10 +40,7 @@ window.addEventListener('resize', function ( event ) {
 
 	})
 
-}, false);
-
-for (const slider of sliders)
-  slider.pause()
+}, false)
 
 const thumbnails = document.querySelectorAll('.thumb-img')
 for (const $thumb of thumbnails) {
@@ -52,3 +49,15 @@ for (const $thumb of thumbnails) {
       slider.set($thumb.dataset.num)
   })
 }
+
+// Material box for the image
+
+const matBoxImages = document.querySelectorAll('.materialboxed')
+M.Materialbox.init(matBoxImages, {
+  onOpenStart() {
+    for (const slider of sliders) slider.pause()
+  },
+  onCloseEnd() {
+    for (const slider of sliders) slider.start
+  }
+})

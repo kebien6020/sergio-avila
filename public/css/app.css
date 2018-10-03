@@ -322,3 +322,7 @@ html.item .descr h3 {
   margin-top: 8px;
 }
 
+html.item .slider .slides {
+  background-color: #fff;
+}
+
