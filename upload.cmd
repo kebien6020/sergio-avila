@@ -1,5 +1,8 @@
 rsync -avz -e ssh ^
 --chmod=755 ^
+--exclude="/storage/app/***" ^
+--exclude="/storage/framework/***" ^
+--exclude="/storage/logs/***" ^
 --include="/app/***" ^
 --include="/bootstrap/***" ^
 --include="/config/***" ^
