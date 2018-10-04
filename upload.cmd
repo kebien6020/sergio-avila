@@ -25,3 +25,9 @@ rsync -avz -e ssh ^
 --include="/yarn.lock" ^
 --exclude="*" ^
 . kevin@kevinpena.com:/var/www/sergio-avila/
+
+ssh kevin@kevinpena.com "cd /var/www/sergio-avila && composer update --no-dev"
+ssh kevin@kevinpena.com "cd /var/www/sergio-avila && npm install"
+ssh kevin@kevinpena.com "cd /var/www/sergio-avila && npm run production"
+ssh kevin@kevinpena.com "cd /var/www/sergio-avila && php artisan view:clear"
+ssh kevin@kevinpena.com "cd /var/www/sergio-avila && php artisan view:cache"
