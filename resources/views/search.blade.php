@@ -39,7 +39,7 @@
       <div class="masonry row">
         @foreach ($items as $item)
           <div class="masonry-item col s6 l4">
-            <a href="/item/{{ str_replace(' ', '-', $item->code) }}">
+            <a href="/item/{{ str_replace(' ', '_', $item->code) }}">
               <div class="card hoverable">
                 <div class="card-image">
                   <img src="{!! $item->images->first()->url !!}">

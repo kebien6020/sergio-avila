@@ -48,7 +48,7 @@ Route::get('/search', function (Request $req) {
 });
 
 Route::get('/item/{code}', function ($code) {
-  $code = str_replace('-', ' ', $code);
+  $code = str_replace('_', ' ', $code);
   $items = Item::where(['code' => $code])->get();
   if ($items->count() <= 0) {
     return abort(404);
