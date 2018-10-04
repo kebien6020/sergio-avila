@@ -1,4 +1,6 @@
 const M = require('materialize-css')
+const Masonry = require('masonry')
+const imagesloaded = require('imagesloaded')
 
 function sliderResponsiveHeight() {
   let res = 350
@@ -61,3 +63,13 @@ M.Materialbox.init(matBoxImages, {
     for (const slider of sliders) slider.start
   }
 })
+
+// Masonry
+
+const masonry = new Masonry('.masonry', {
+  itemSelector: '.masonry-item',
+  columnWidth: '.masonry-item',
+  percentPosition: true,
+});
+
+imagesloaded('.masonry').on('progress', () => masonry.layout())

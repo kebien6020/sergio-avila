@@ -45,7 +45,7 @@
                   <img src="{!! $item->images->first()->url !!}">
                 </div>
                 <div class="card-content">
-                  <span class="card-title">{{ $item->name }}</span>
+                  <span class="card-title flow-text">{{ $item->name }}</span>
                   <small>{{ $item->code }}</small>
                 </div>
               </div>
@@ -57,7 +57,7 @@
   </div>
 </div>
 
-{{-- Masonry layout used only in this view --}}
+{{-- Masonry layout specific to this view --}}
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 @endsection

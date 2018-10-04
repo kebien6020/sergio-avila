@@ -63,29 +63,50 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports) {
 
 module.exports = M;
 
 /***/ }),
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
+/***/ (function(module, exports) {
 
-/***/ 13:
+module.exports = Masonry;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = imagesLoaded;
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(14);
 
 
 /***/ }),
-
-/***/ 14:
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var M = __webpack_require__(0);
+var Masonry = __webpack_require__(11);
+var imagesloaded = __webpack_require__(12);
 
 function sliderResponsiveHeight() {
   var res = 350;
@@ -260,6 +281,17 @@ M.Materialbox.init(matBoxImages, {
   }
 });
 
-/***/ })
+// Masonry
 
-/******/ });
+var masonry = new Masonry('.masonry', {
+  itemSelector: '.masonry-item',
+  columnWidth: '.masonry-item',
+  percentPosition: true
+});
+
+imagesloaded('.masonry').on('progress', function () {
+  return masonry.layout();
+});
+
+/***/ })
+/******/ ]);

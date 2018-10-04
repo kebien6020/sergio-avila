@@ -44,13 +44,40 @@
     <div class="descr col s12 l8">
       <h3>{{ $item->name }}</h3>
       <small class="flow-text">{{ $item->code }}</small>
+
+      <h4>Descripción</h4>
+      <div class="divider"></div>
       <p class="flow-text">
-        <strong>Descripción: </strong>
         {{ $item->description_1 }}
         @if($item->description_2 !== '')
           ({{ $item->description_2 }})
         @endif
       </p>
+
+      @if ($moreColors->count() > 0)
+        <h4>Otros colores</h4>
+        <div class="divider"></div>
+        <div class="more-colors masonry row">
+          @foreach($moreColors as $relItem)
+            <div class="card-wrapper masonry-item col s6 m4 l3">
+              <a href="/item/{{ str_replace(' ', '-', $item->code) }}">
+                <div class="card hoverable">
+                  <div class="card-image">
+                    <img src="{!! $relItem->images->first()->url !!}">
+                  </div>
+                  <div class="card-content">
+                    <p>{{ $relItem->name }}</p>
+                    <small>{{ $relItem->code }}</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+          @endforeach
+        </div>
+      @endif
+
+      <h4>Detalles</h4>
+      <div class="divider"></div>
       <table class="striped">
         <?php
           use \Illuminate\Support\HtmlString;
@@ -89,5 +116,9 @@
   </div>
 
 </div>
+
+{{-- Masonry layout specific to this view --}}
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
 @endsection

@@ -326,3 +326,7 @@ html.item .slider .slides {
   background-color: #fff;
 }
 
+html.item .more-colors a {
+  color: rgba(0, 0, 0, 0.87);
+}
+

@@ -53,7 +53,15 @@ Route::get('/item/{code}', function ($code) {
   if ($items->count() <= 0) {
     return abort(404);
   }
+
+  $item = $items->first();
+
+  $moreColors = Item::where('father', $item->father)
+    ->where('code', '!=', $item->code)
+    ->get();
+
   return view('item', [
-    'item' => $items->first()
+    'item' => $item,
+    'moreColors' => $moreColors,
   ]);
 });
