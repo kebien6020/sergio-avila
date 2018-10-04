@@ -19,18 +19,33 @@ Route::get('/', function () {
     return view('home');
 });
 
+function getItemsForPage(Request $req) {
+  $items = Item::with(['images', 'family']);
+  if ($req->has('fam')) {
+    $codes = json_decode($req->query('fam'), true);
+    if (!is_null($codes)) {
+      $items = $items->whereIn('family_code', $codes);
+    }
+  }
+  $items = $items->paginate(15);
+
+  return $items;
+}
+
+Route::get('/partials/items', function (Request $req) {
+  $items = getItemsForPage($req);
+
+  return view('itempage', ['items' => $items]);
+});
+
 Route::get('/search', function (Request $req) {
 
     $codes = false;
-
-    $items = Item::with(['images', 'family']);
     if ($req->has('fam')) {
       $codes = json_decode($req->query('fam'), true);
-      if (!is_null($codes)) {
-        $items = $items->whereIn('family_code', $codes);
-      }
     }
-    $items = $items->get();
+
+    $items = getItemsForPage($req->merge(['page' => '1']));
 
 
     $families = collect();
