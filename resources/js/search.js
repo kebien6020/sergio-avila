@@ -7,7 +7,8 @@ M.Collapsible.init(collapsibles)
 
 const masonry = new Masonry( '.results .masonry', {
   itemSelector: '.masonry-item',
-  columnWidth: 250,
+  columnWidth: '.masonry-item',
+  percentPosition: true,
 });
 
 imagesloaded('.results .masonry').on('progress', () => masonry.layout())

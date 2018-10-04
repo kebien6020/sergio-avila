@@ -97,7 +97,8 @@ M.Collapsible.init(collapsibles);
 
 var masonry = new Masonry('.results .masonry', {
   itemSelector: '.masonry-item',
-  columnWidth: 250
+  columnWidth: '.masonry-item',
+  percentPosition: true
 });
 
 imagesloaded('.results .masonry').on('progress', function () {
