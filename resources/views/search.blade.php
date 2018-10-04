@@ -11,7 +11,11 @@
     <div class="col s12">
       <a href="/#categories" class="breadcrumb">CATEGORÍAS</a>
       <span class="breadcrumb">
-        {{ $families->pluck('name')->implode(', ') }}
+        @if ($families->count() >= 5)
+          MULTIPLES CATEGORÍAS
+        @else
+          {{ $families->pluck('name')->implode(', ') }}
+        @endif
       </span>
     </div>
   </div>

@@ -34,12 +34,11 @@ Route::get('/search', function (Request $req) {
 
 
     $families = collect();
-    if ($codes) {
-      $families = Family::whereIn('code', $codes);
+    if ($req->has('fam')) {
+      $families = Family::whereIn('code', $codes)->get();
     } else {
       $families = Family::all();
     }
-    $families = $families->get();
 
     return view('search', [
       'items' => $items,
