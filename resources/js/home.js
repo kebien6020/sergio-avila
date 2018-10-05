@@ -70,3 +70,27 @@ scrim.addEventListener('click', () => {
     if (inner) inner.style.display = 'none'
   }
 })
+
+// Open message sent modal
+
+const modalElems = document.querySelectorAll('.modal')
+M.Modal.init(modalElems, {
+  onCloseEnd() {
+    // Remove get parameter without reloading the page
+    window.history.replaceState({}, '', '/')
+  }
+})
+
+const $messageSentModal = document.getElementById('message-sent-modal')
+const sentModal = M.Modal.getInstance($messageSentModal)
+
+const search = window.location.search.slice(1) // slice ? from the beginning
+const parsedSearch = search
+  .split('&')
+  .map(s => s.split('='))
+  .filter(([key]) => key !== '')
+  .reduce((obj, arr) => (obj[arr[0]] = arr[1], obj), {})
+
+if (parsedSearch['message-sent']) {
+  sentModal.open()
+}

@@ -119,14 +119,25 @@
             <h4 class="card-panel">Contactenos</h4>
           </div>
         </div>
-        <form>
+        <form action="https://formspree.io/kevin.pena.prog@gmail.com" method="post">
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="first_name" type="text" class="validate" required placeholder="Nombre">
+              <input
+                id="first_name"
+                name="first_name"
+                type="text"
+                class="validate"
+                required
+                placeholder="Nombre">
               <label for="first_name">Nombre</label>
             </div>
             <div class="input-field col s12 m6">
-              <input id="last_name" type="text" class="validate" placeholder="(Opcional)">
+              <input
+                id="last_name"
+                name="last_name"
+                type="text"
+                class="validate"
+                placeholder="(Opcional)">
               <label for="last_name">Apellido</label>
             </div>
           </div>
@@ -134,6 +145,7 @@
             <div class="input-field col s12">
               <input
                 id="email"
+                name="email"
                 type="email"
                 class="validate"
                 required
@@ -146,6 +158,7 @@
             <div class="input-field col s12">
               <input
                 id="tel"
+                name="tel"
                 type="tel"
                 class="validate"
                 required
@@ -158,6 +171,7 @@
             <div class="input-field col s12">
               <textarea
                 id="mensaje"
+                name="mensaje"
                 class="materialize-textarea char-counted validate"
                 placeholder="Ingresa el comentario que nos quieres hacer llegar"
                 data-length="400"
@@ -171,10 +185,25 @@
               <i class="material-icons right">send</i>
             </button>
           </div>
+          <input type="hidden" name="_next" value="/?message-sent=1">
         </form>
       </div>
     </div>
   </div>
 </section>
+
+
+{{-- Message sent modal --}}
+<div id="message-sent-modal" class="modal">
+  <div class="modal-content">
+    <h4>Mensaje enviado</h4>
+    <p>Gracias por contactarnos</p>
+    <p></p>
+    <p>Tu mensaje fue enviado exitosamente. <br>Responderemos tu consulta lo mas pronto posible.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+  </div>
+</div>
 
 @endsection
