@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="existencias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="distribuidor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="existenciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="existenciasResult" type="tns:ArrayOfExistencia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExistencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Existencia" nillable="true" type="tns:Existencia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Existencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Almacen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Stok" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="colorItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="colorItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="colorItemResult" type="tns:ArrayOfColores" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfColores">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Colores" nillable="true" type="tns:Colores" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Colores">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="colors">
+        <s:complexType />
+      </s:element>
+      <s:element name="colorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="colorsResult" type="tns:ArrayOfColores" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fichaTecnica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fichaTecnicaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fichaTecnicaResult" type="tns:ArrayOfFicha" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFicha">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ficha" nillable="true" type="tns:Ficha" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ficha">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Des1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Des2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Familia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Material" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Size" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Empaque" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Height" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Width" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Length" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Volumen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TecnicaImp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaImp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="existenciasSoapIn">
+    <wsdl:part name="parameters" element="tns:existencias" />
+  </wsdl:message>
+  <wsdl:message name="existenciasSoapOut">
+    <wsdl:part name="parameters" element="tns:existenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="colorItemSoapIn">
+    <wsdl:part name="parameters" element="tns:colorItem" />
+  </wsdl:message>
+  <wsdl:message name="colorItemSoapOut">
+    <wsdl:part name="parameters" element="tns:colorItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="colorsSoapIn">
+    <wsdl:part name="parameters" element="tns:colors" />
+  </wsdl:message>
+  <wsdl:message name="colorsSoapOut">
+    <wsdl:part name="parameters" element="tns:colorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fichaTecnicaSoapIn">
+    <wsdl:part name="parameters" element="tns:fichaTecnica" />
+  </wsdl:message>
+  <wsdl:message name="fichaTecnicaSoapOut">
+    <wsdl:part name="parameters" element="tns:fichaTecnicaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FullFilmentColombiaSoap">
+    <wsdl:operation name="existencias">
+      <wsdl:input message="tns:existenciasSoapIn" />
+      <wsdl:output message="tns:existenciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="colorItem">
+      <wsdl:input message="tns:colorItemSoapIn" />
+      <wsdl:output message="tns:colorItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="colors">
+      <wsdl:input message="tns:colorsSoapIn" />
+      <wsdl:output message="tns:colorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fichaTecnica">
+      <wsdl:input message="tns:fichaTecnicaSoapIn" />
+      <wsdl:output message="tns:fichaTecnicaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FullFilmentColombiaSoap" type="tns:FullFilmentColombiaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="existencias">
+      <soap:operation soapAction="http://tempuri.org/existencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="colorItem">
+      <soap:operation soapAction="http://tempuri.org/colorItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="colors">
+      <soap:operation soapAction="http://tempuri.org/colors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fichaTecnica">
+      <soap:operation soapAction="http://tempuri.org/fichaTecnica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FullFilmentColombiaSoap12" type="tns:FullFilmentColombiaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="existencias">
+      <soap12:operation soapAction="http://tempuri.org/existencias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="colorItem">
+      <soap12:operation soapAction="http://tempuri.org/colorItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="colors">
+      <soap12:operation soapAction="http://tempuri.org/colors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fichaTecnica">
+      <soap12:operation soapAction="http://tempuri.org/fichaTecnica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FullFilmentColombia">
+    <wsdl:port name="FullFilmentColombiaSoap" binding="tns:FullFilmentColombiaSoap">
+      <soap:address location="http://desktop.promoopcion.com:8095/wsFullFilmentCol/FullFilmentColombia.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FullFilmentColombiaSoap12" binding="tns:FullFilmentColombiaSoap12">
+      <soap12:address location="http://desktop.promoopcion.com:8095/wsFullFilmentCol/FullFilmentColombia.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
