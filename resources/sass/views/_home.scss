@@ -140,5 +140,31 @@ html.home {
 
 }
 
+#contact {
+  .parallax-container {
+    padding-top: 48px;
+    height: 650px;
+  }
+
+  .row {
+    margin-bottom: 0;
+    padding-bottom: 24px;
+  }
+
+  .card-panel.white {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .title h4 {
+    text-align: center;
+    margin-top: -36px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: $secondary-color;
+    color: color("shades", "white");
+  }
+  
+}
 
 } // html.home

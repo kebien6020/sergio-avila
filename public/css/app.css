@@ -293,6 +293,30 @@ html.home #categories .card.card-outer.expanded .subcategory-container .card {
   }
 }
 
+html.home #contact .parallax-container {
+  padding-top: 48px;
+  height: 650px;
+}
+
+html.home #contact .row {
+  margin-bottom: 0;
+  padding-bottom: 24px;
+}
+
+html.home #contact .card-panel.white {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+html.home #contact .title h4 {
+  text-align: center;
+  margin-top: -36px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #0a6ebd;
+  color: #FFFFFF;
+}
+
 html.search .category-list .collapsible-body {
   padding: 0;
 }

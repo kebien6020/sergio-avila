@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col l4 s12">
-        <h5 class="white-text">Informacion de contacto</h5>
+        <h5 class="white-text">Pongase en contacto</h5>
         <p class="grey-text text-lighten-4">La información de contacto se ubica aquí.</p>
       </div>
       <div class="col l6 offset-l2 s12">

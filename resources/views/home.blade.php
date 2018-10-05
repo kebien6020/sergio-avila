@@ -109,4 +109,54 @@
   </div>
 </section>
 
+<section id="contact">
+  <div class="parallax-container">
+    <div class="parallax"><img src="/images/contact-bg.jpg"></div>
+    <div class="row">
+      <div class="card-panel white col s12 m8 offset-m2 l6 offset-l3">
+        <div class="row">
+          <div class="title col s10 offset-s1">
+            <h4 class="card-panel">Contactenos</h4>
+          </div>
+        </div>
+        <form>
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="first_name" type="text" class="validate" required>
+              <label for="first_name">Nombre</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Apellido</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" required>
+              <label for="email">Correo Electrónico</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                id="mensaje"
+                class="materialize-textarea char-counted validate"
+                placeholder="Ingresa el comentario que nos quieres hacer llegar"
+                data-length="400"
+                required
+              ></textarea>
+              <label for="mensaje">Mensaje</label>
+            </div>
+          </div>
+          <div class="row">
+            <button class="col s6 offset-s3 m4 offset-m4 btn waves-effect waves-light" type="submit">Enviar
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 @endsection

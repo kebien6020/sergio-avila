@@ -87,9 +87,13 @@ module.exports = __webpack_require__(13);
 
 var M = __webpack_require__(0);
 
-// About parallax
+// About and contact parallax
 var parallaxElems = document.querySelectorAll('.parallax');
 M.Parallax.init(parallaxElems);
+
+// Contact character counter
+var counted = document.querySelectorAll('.char-counted');
+M.CharacterCounter.init(counted);
 
 // Card expansion
 var outerCards = document.querySelectorAll('.card-outer');

@@ -2,9 +2,13 @@
 
 const M = require('materialize-css')
 
-// About parallax
+// About and contact parallax
 const parallaxElems = document.querySelectorAll('.parallax')
 M.Parallax.init(parallaxElems)
+
+// Contact character counter
+const counted = document.querySelectorAll('.char-counted')
+M.CharacterCounter.init(counted)
 
 // Card expansion
 const outerCards = document.querySelectorAll('.card-outer')
