@@ -120,7 +120,7 @@
         {{ renderRow('CANTIDAD', $item->qty_packing . ' pza(s).') }}
         {{ renderRow('INDIVIDUAL BOX', '') }}
 
-
+      </table>
     </div>
   </div>
 
