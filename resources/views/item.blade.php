@@ -43,7 +43,7 @@
 
     <div class="descr col s12 l8">
       <h3>{{ $item->name }}</h3>
-      <small class="flow-text">{{ $item->code }}</small>
+      <small id="item-code" class="flow-text">{{ $item->code }}</small>
 
       <h4>Descripción</h4>
       <div class="divider"></div>
@@ -53,6 +53,15 @@
           ({{ $item->description_2 }})
         @endif
       </p>
+
+      <div class="existences card-panel valign-wrapper">
+        <i class="material-icons">archive</i>
+        <p id="existence-msg"></p>
+      </div>
+      <div class="existences-error card-panel valign-wrapper">
+        <i class="material-icons">error</i>
+        <p id="existence-error-msg"></p>
+      </div>
 
       @if ($moreColors->count() > 0)
         <h4>Otros colores</h4>

@@ -73,3 +73,39 @@ const masonry = new Masonry('.masonry', {
 });
 
 imagesloaded('.masonry').on('progress', () => masonry.layout())
+
+// Existences
+
+async function fetchExistences() {
+  const itemCode = document.getElementById('item-code').textContent
+  try {
+    const res = await fetch('/api/existences/' + itemCode)
+    const data = await res.json()
+
+    if (!data.success) {
+      console.error('Error de SOAP', data)
+      return handleError()
+    }
+
+    const existence = data.Existencia
+
+    const $exMsg = document.getElementById('existence-msg')
+    const num = String(Number(existence.Stok))
+    $exMsg.textContent = `Tenemos ${num} en stock.`
+
+    document.querySelector('.existences').classList.add('show')
+  } catch (err) {
+    return handleError()
+  }
+
+
+  function handleError() {
+    const $exErrorMsg = document.getElementById('existence-error-msg')
+    $exErrorMsg.textContent = 'Error al consultar existencias.'
+
+    document.querySelector('.existences-error').classList.add('show')
+  }
+
+}
+
+fetchExistences()

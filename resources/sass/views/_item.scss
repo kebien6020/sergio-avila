@@ -27,5 +27,34 @@ html.item {
   }
 }
 
+.existences {
+
+  background-color: color("green", "lighten-4");
+  color: color("green", "darken-4");
+
+  transform: scaleY(0);
+  height: 0;
+  padding: 0;
+  margin: 0;
+
+  transition: all .3s cubic-bezier(0.53, 0.01, 0.36, 1.63);
+  transform-origin: top;
+
+  &.show {
+    transform: scaleY(1);
+    height: 48px;
+    margin: 0.5rem 0 1rem 0;
+    padding: 8px;
+  }
+
+}
+
+.existences-error {
+  @extend .existences;
+
+  background-color: color("red", "lighten-4");
+  color: color("red", "darken-4");
+}
+
 
 } // html.item

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,16 +70,21 @@
 module.exports = M;
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(2);
-__webpack_require__(5);
-module.exports = __webpack_require__(6);
+__webpack_require__(7);
+__webpack_require__(10);
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
-/* 2 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -89,7 +94,7 @@ module.exports = __webpack_require__(6);
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
-__webpack_require__(3);
+__webpack_require__(8);
 
 var M = __webpack_require__(0);
 
@@ -160,7 +165,7 @@ $navOptions.style.paddingLeft = $logoImg.width + 'px';
 // })
 
 /***/ }),
-/* 3 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // window.Popper = require('popper.js').default;
@@ -171,7 +176,7 @@ $navOptions.style.paddingLeft = $logoImg.width + 'px';
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(4);
+window.axios = __webpack_require__(9);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -207,19 +212,19 @@ if (token) {
 // });
 
 /***/ }),
-/* 4 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = axios;
 
 /***/ }),
-/* 5 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 6 */
+/* 11 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

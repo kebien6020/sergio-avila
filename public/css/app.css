@@ -329,3 +329,32 @@ html.item .more-colors a {
   color: rgba(0, 0, 0, 0.87);
 }
 
+html.item .existences,
+html.item .existences-error {
+  background-color: #C8E6C9;
+  color: #1B5E20;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  height: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.53, 0.01, 0.36, 1.63);
+  transition: all 0.3s cubic-bezier(0.53, 0.01, 0.36, 1.63);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+html.item .existences.show,
+html.item .show.existences-error {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  height: 48px;
+  margin: 0.5rem 0 1rem 0;
+  padding: 8px;
+}
+
+html.item .existences-error {
+  background-color: #FFCDD2;
+  color: #B71C1C;
+}
+

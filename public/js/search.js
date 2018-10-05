@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,242 +70,14 @@
 module.exports = M;
 
 /***/ }),
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(10);
+module.exports = __webpack_require__(2);
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var loadPage = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-    var search, parsedSearch, newSearch, res, partial, tempContainer, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, elem, items;
-
-    return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.prev = 0;
-            search = window.location.search.slice(1); // slice ? from the beginning
-
-            parsedSearch = search.split('&').map(function (s) {
-              return s.split('=');
-            }).filter(function (_ref2) {
-              var _ref3 = _slicedToArray(_ref2, 1),
-                  key = _ref3[0];
-
-              return key !== '';
-            }).reduce(function (obj, arr) {
-              return obj[arr[0]] = arr[1], obj;
-            }, {});
-
-
-            parsedSearch.page = pageToLoad;
-            newSearch = '?' + Object.entries(parsedSearch).map(function (keyValArr) {
-              return keyValArr.join('=');
-            }).join('&');
-            _context.next = 7;
-            return fetch('/partials/items' + newSearch);
-
-          case 7:
-            res = _context.sent;
-            _context.next = 10;
-            return res.text();
-
-          case 10:
-            partial = _context.sent;
-
-            if (!(partial === '')) {
-              _context.next = 14;
-              break;
-            }
-
-            pageToLoad = null;
-            return _context.abrupt('return');
-
-          case 14:
-            tempContainer = document.createElement('div');
-
-            tempContainer.innerHTML = partial;
-
-            _iteratorNormalCompletion = true;
-            _didIteratorError = false;
-            _iteratorError = undefined;
-            _context.prev = 19;
-            for (_iterator = tempContainer.children[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-              elem = _step.value;
-
-              target.append(elem);
-            }_context.next = 27;
-            break;
-
-          case 23:
-            _context.prev = 23;
-            _context.t0 = _context['catch'](19);
-            _didIteratorError = true;
-            _iteratorError = _context.t0;
-
-          case 27:
-            _context.prev = 27;
-            _context.prev = 28;
-
-            if (!_iteratorNormalCompletion && _iterator.return) {
-              _iterator.return();
-            }
-
-          case 30:
-            _context.prev = 30;
-
-            if (!_didIteratorError) {
-              _context.next = 33;
-              break;
-            }
-
-            throw _iteratorError;
-
-          case 33:
-            return _context.finish(30);
-
-          case 34:
-            return _context.finish(27);
-
-          case 35:
-            masonry.appended(tempContainer.children);
-            items = masonry.addItems(tempContainer.children);
-
-            masonry.reloadItems();
-
-            // Rebind imagesloaded on progress
-            imgLoad.off('progress');
-            imgLoad = imagesloaded('.results .masonry');
-            imgLoad.on('progress', reLayout);
-
-            ++pageToLoad;
-
-          case 42:
-            _context.prev = 42;
-
-            loading = false;
-            return _context.finish(42);
-
-          case 45:
-          case 'end':
-            return _context.stop();
-        }
-      }
-    }, _callee, this, [[0,, 42, 45], [19, 23, 27, 35], [28,, 30, 34]]);
-  }));
-
-  return function loadPage() {
-    return _ref.apply(this, arguments);
-  };
-}();
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-var M = __webpack_require__(0);
-var Masonry = __webpack_require__(11);
-var imagesloaded = __webpack_require__(12);
-
-// Collapsibles
-var collapsibles = document.querySelectorAll('.collapsible');
-M.Collapsible.init(collapsibles);
-
-// Masonry
-var masonry = new Masonry('.results .masonry', {
-  itemSelector: '.masonry-item',
-  columnWidth: '.masonry-item',
-  percentPosition: true
-});
-
-var imgLoad = imagesloaded('.results .masonry');
-var reLayout = function reLayout() {
-  return masonry.layout();
-};
-imgLoad.on('progress', reLayout);
-
-// Infinite scroll
-
-var lastKnownScrollPosition = 0;
-var ticking = false;
-var pageToLoad = 2;
-var loading = false;
-
-imgLoad.on('always', registerScrollListener);
-
-function registerScrollListener() {
-  window.addEventListener('scroll', function (e) {
-    lastKnownScrollPosition = window.scrollY;
-
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        checkInfiniteScroll(lastKnownScrollPosition);
-        ticking = false;
-      });
-
-      ticking = true;
-    }
-  });
-}
-
-function checkInfiniteScroll(scrollTop) {
-  var scrollBottom = scrollTop + window.innerHeight;
-  var distanceToBottom = document.body.scrollHeight - scrollBottom;
-  if (distanceToBottom < 1000 && !loading && pageToLoad !== null) {
-    loading = true;
-    loadPage();
-  }
-}
-
-var target = document.querySelector('.results .masonry');
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports = Masonry;
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-module.exports = imagesLoaded;
-
-/***/ }),
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(21);
-
-
-/***/ }),
-/* 21 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -330,7 +102,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(22);
+module.exports = __webpack_require__(3);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -346,7 +118,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 22 */
+/* 3 */
 /***/ (function(module, exports) {
 
 /**
@@ -1077,6 +849,227 @@ if (hadRuntime) {
   (function() { return this })() || Function("return this")()
 );
 
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = Masonry;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = imagesLoaded;
+
+/***/ }),
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(15);
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var loadPage = function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+    var search, parsedSearch, newSearch, res, partial, tempContainer, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, elem, items;
+
+    return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            search = window.location.search.slice(1); // slice ? from the beginning
+
+            parsedSearch = search.split('&').map(function (s) {
+              return s.split('=');
+            }).filter(function (_ref2) {
+              var _ref3 = _slicedToArray(_ref2, 1),
+                  key = _ref3[0];
+
+              return key !== '';
+            }).reduce(function (obj, arr) {
+              return obj[arr[0]] = arr[1], obj;
+            }, {});
+
+
+            parsedSearch.page = pageToLoad;
+            newSearch = '?' + Object.entries(parsedSearch).map(function (keyValArr) {
+              return keyValArr.join('=');
+            }).join('&');
+            _context.next = 7;
+            return fetch('/partials/items' + newSearch);
+
+          case 7:
+            res = _context.sent;
+            _context.next = 10;
+            return res.text();
+
+          case 10:
+            partial = _context.sent;
+
+            if (!(partial === '')) {
+              _context.next = 14;
+              break;
+            }
+
+            pageToLoad = null;
+            return _context.abrupt('return');
+
+          case 14:
+            tempContainer = document.createElement('div');
+
+            tempContainer.innerHTML = partial;
+
+            _iteratorNormalCompletion = true;
+            _didIteratorError = false;
+            _iteratorError = undefined;
+            _context.prev = 19;
+            for (_iterator = tempContainer.children[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              elem = _step.value;
+
+              target.append(elem);
+            }_context.next = 27;
+            break;
+
+          case 23:
+            _context.prev = 23;
+            _context.t0 = _context['catch'](19);
+            _didIteratorError = true;
+            _iteratorError = _context.t0;
+
+          case 27:
+            _context.prev = 27;
+            _context.prev = 28;
+
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+
+          case 30:
+            _context.prev = 30;
+
+            if (!_didIteratorError) {
+              _context.next = 33;
+              break;
+            }
+
+            throw _iteratorError;
+
+          case 33:
+            return _context.finish(30);
+
+          case 34:
+            return _context.finish(27);
+
+          case 35:
+            masonry.appended(tempContainer.children);
+            items = masonry.addItems(tempContainer.children);
+
+            masonry.reloadItems();
+
+            // Rebind imagesloaded on progress
+            imgLoad.off('progress');
+            imgLoad = imagesloaded('.results .masonry');
+            imgLoad.on('progress', reLayout);
+
+            ++pageToLoad;
+
+          case 42:
+            _context.prev = 42;
+
+            loading = false;
+            return _context.finish(42);
+
+          case 45:
+          case 'end':
+            return _context.stop();
+        }
+      }
+    }, _callee, this, [[0,, 42, 45], [19, 23, 27, 35], [28,, 30, 34]]);
+  }));
+
+  return function loadPage() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+var M = __webpack_require__(0);
+var Masonry = __webpack_require__(4);
+var imagesloaded = __webpack_require__(5);
+
+// Collapsibles
+var collapsibles = document.querySelectorAll('.collapsible');
+M.Collapsible.init(collapsibles);
+
+// Masonry
+var masonry = new Masonry('.results .masonry', {
+  itemSelector: '.masonry-item',
+  columnWidth: '.masonry-item',
+  percentPosition: true
+});
+
+var imgLoad = imagesloaded('.results .masonry');
+var reLayout = function reLayout() {
+  return masonry.layout();
+};
+imgLoad.on('progress', reLayout);
+
+// Infinite scroll
+
+var lastKnownScrollPosition = 0;
+var ticking = false;
+var pageToLoad = 2;
+var loading = false;
+
+imgLoad.on('always', registerScrollListener);
+
+function registerScrollListener() {
+  window.addEventListener('scroll', function (e) {
+    lastKnownScrollPosition = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        checkInfiniteScroll(lastKnownScrollPosition);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+}
+
+function checkInfiniteScroll(scrollTop) {
+  var scrollBottom = scrollTop + window.innerHeight;
+  var distanceToBottom = document.body.scrollHeight - scrollBottom;
+  if (distanceToBottom < 1000 && !loading && pageToLoad !== null) {
+    loading = true;
+    loadPage();
+  }
+}
+
+var target = document.querySelector('.results .masonry');
 
 /***/ })
 /******/ ]);
