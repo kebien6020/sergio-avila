@@ -142,6 +142,37 @@ footer .map {
   border: 0;
 }
 
+footer .sub-contact {
+  display: block;
+}
+
+footer .sub-contact .sub-icon {
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 12px;
+}
+
+footer .sub-contact .sub-icon i {
+  font-size: 36px;
+}
+
+footer .sub-contact .sub-text {
+  height: 100%;
+  display: inline-block;
+}
+
+footer .sub-contact .sub-text h5,
+footer .sub-contact .sub-text h6 {
+  font-size: 24px;
+  font-variant: small-caps;
+  margin-bottom: 16px;
+}
+
+footer .sub-contact .sub-text p {
+  margin: 2px 0;
+}
+
 html.home .about .parallax-container {
   height: 350px;
 }
