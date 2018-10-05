@@ -122,18 +122,36 @@
         <form>
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="first_name" type="text" class="validate" required>
+              <input id="first_name" type="text" class="validate" required placeholder="Nombre">
               <label for="first_name">Nombre</label>
             </div>
             <div class="input-field col s12 m6">
-              <input id="last_name" type="text" class="validate">
+              <input id="last_name" type="text" class="validate" placeholder="(Opcional)">
               <label for="last_name">Apellido</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="email" type="email" class="validate" required>
+              <input
+                id="email"
+                type="email"
+                class="validate"
+                required
+                placeholder="A esta dirección contestaremos tu mensaje"
+              >
               <label for="email">Correo Electrónico</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                id="tel"
+                type="tel"
+                class="validate"
+                required
+                placeholder="(Opcional)"
+              >
+              <label for="tel">Celular</label>
             </div>
           </div>
           <div class="row">

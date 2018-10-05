@@ -295,7 +295,7 @@ html.home #categories .card.card-outer.expanded .subcategory-container .card {
 
 html.home #contact .parallax-container {
   padding-top: 48px;
-  height: 650px;
+  height: auto;
 }
 
 html.home #contact .row {
@@ -315,6 +315,11 @@ html.home #contact .title h4 {
   padding-bottom: 16px;
   background-color: #0a6ebd;
   color: #FFFFFF;
+}
+
+html.home #contact form .col {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 html.search .category-list .collapsible-body {
