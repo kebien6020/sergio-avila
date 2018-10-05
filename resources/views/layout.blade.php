@@ -28,6 +28,8 @@
         @yield('content')
       </main>
 
+      @include('partials/footer')
+
 
       {{-- Utility tags --}}
       <div id='scrim'></div>
