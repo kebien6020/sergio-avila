@@ -66,13 +66,16 @@ M.Materialbox.init(matBoxImages, {
 
 // Masonry
 
-const masonry = new Masonry('.masonry', {
-  itemSelector: '.masonry-item',
-  columnWidth: '.masonry-item',
-  percentPosition: true,
-});
+if (document.querySelectorAll('.masonry').length > 0) {
+  const masonry = new Masonry('.masonry', {
+    itemSelector: '.masonry-item',
+    columnWidth: '.masonry-item',
+    percentPosition: true,
+  });
 
-imagesloaded('.masonry').on('progress', () => masonry.layout())
+  imagesloaded('.masonry').on('progress', () => masonry.layout())
+}
+
 
 // Existences
 

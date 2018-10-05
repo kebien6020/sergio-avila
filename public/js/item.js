@@ -1138,15 +1138,17 @@ M.Materialbox.init(matBoxImages, {
 
 // Masonry
 
-var masonry = new Masonry('.masonry', {
-  itemSelector: '.masonry-item',
-  columnWidth: '.masonry-item',
-  percentPosition: true
-});
+if (document.querySelectorAll('.masonry').length > 0) {
+  var masonry = new Masonry('.masonry', {
+    itemSelector: '.masonry-item',
+    columnWidth: '.masonry-item',
+    percentPosition: true
+  });
 
-imagesloaded('.masonry').on('progress', function () {
-  return masonry.layout();
-});
+  imagesloaded('.masonry').on('progress', function () {
+    return masonry.layout();
+  });
+}
 
 fetchExistences();
 
