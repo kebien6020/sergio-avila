@@ -10,6 +10,21 @@
       <li><a href="/#categories">Categorías</a></li>
       <li><a href="/search">Catálogo</a></li>
     </ul>
+    <ul class="search-btn-container">
+      <li><a href="#!"><i class="material-icons">search</i></a></li>
+    </ul>
+
+    {{-- Search form --}}
+    <div class="search-bar">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons search-btn-close">close</i>
+        </div>
+      </form>
+    </div>
+
   </div>
   <ul class="sidenav" id="sidenav-mobile">
     <li><a href="/#categories">Categorías</a></li>

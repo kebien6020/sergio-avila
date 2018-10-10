@@ -156,13 +156,35 @@ var $logoImg = document.querySelector('.brand-logo img');
 
 $navOptions.style.paddingLeft = $logoImg.width + 'px';
 
-// Initialize nav dropdowns
-// const outerDropdown = document.querySelectorAll('nav .dropdown-trigger')
-// M.Dropdown.init(outerDropdown, {
-//   hover: false,
-//   constrainWidth: false,
-//   coverTrigger: false,
-// })
+// Search bar
+
+// Search button
+var searchBtn = document.querySelector('.search-btn-container a');
+var closeBtn = document.querySelector('.search-btn-close');
+var searchBar = document.querySelector('.search-bar');
+var searchInput = document.querySelector('input#search');
+
+searchBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  searchBar.style.display = 'block';
+  setTimeout(function () {
+    return searchBar.classList.add('show');
+  }, 0);
+  searchInput.focus();
+});
+
+function closeSearchBar() {
+
+  searchBar.classList.remove('show');
+
+  setTimeout(function () {
+    return searchBar.style.display = '';
+  }, 400);
+}
+
+closeBtn.addEventListener('click', closeSearchBar);
+searchInput.addEventListener('blur', closeSearchBar);
 
 /***/ }),
 /* 8 */

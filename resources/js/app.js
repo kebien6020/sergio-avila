@@ -44,11 +44,28 @@ const $logoImg = document.querySelector('.brand-logo img')
 
 $navOptions.style.paddingLeft = $logoImg.width + 'px'
 
+// Search bar
 
-// Initialize nav dropdowns
-// const outerDropdown = document.querySelectorAll('nav .dropdown-trigger')
-// M.Dropdown.init(outerDropdown, {
-//   hover: false,
-//   constrainWidth: false,
-//   coverTrigger: false,
-// })
+// Search button
+const searchBtn = document.querySelector('.search-btn-container a')
+const closeBtn = document.querySelector('.search-btn-close')
+const searchBar = document.querySelector('.search-bar')
+const searchInput = document.querySelector('input#search')
+
+searchBtn.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  searchBar.style.display = 'block'
+  setTimeout(() => searchBar.classList.add('show') , 0)
+  searchInput.focus()
+})
+
+function closeSearchBar() {
+
+  searchBar.classList.remove('show')
+
+  setTimeout(() => searchBar.style.display = '', 400)
+}
+
+closeBtn.addEventListener('click', closeSearchBar)
+searchInput.addEventListener('blur', closeSearchBar)
