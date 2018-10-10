@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Item;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,26 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::middleware('api')->get('/autosuggest', function(Request $request) {
+  if ($request->term) {
+    return Item::search($request->term)
+      ->take(15)
+      ->get()
+      ->unique('father')
+      ->load('images')
+      ->map(function($item) {
+        return collect([
+          'name' => $item->name,
+          'image' => $item->images->first()->url
+        ]);
+      })
+      ->values();
+  }
+
+  return Item::all();
 });
