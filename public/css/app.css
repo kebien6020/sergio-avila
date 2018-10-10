@@ -229,6 +229,19 @@ html.home #categories .card.card-outer > .card-image img {
   top: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  html.home #categories .card.card-outer > .card-content {
+    padding: 8px;
+  }
+}
+
+html.home #categories .card.card-outer > .card-content > .card-title {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 html.home #categories .card-content {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -318,6 +331,28 @@ html.home #categories .card.card-outer.expanded .subcategory-container .inner-ca
   }
 }
 
+@media only screen and (max-width: 600px) {
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(1),
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(1) ~ div {
+    width: 100%;
+  }
+
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(2),
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(2) ~ div {
+    width: 100%;
+  }
+
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(3),
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(3) ~ div {
+    width: 100%;
+  }
+
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(4),
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper:first-child:nth-last-child(4) ~ div {
+    width: 100%;
+  }
+}
+
 html.home #categories .card.card-outer.expanded .subcategory-container a {
   display: block;
   z-index: 200;
@@ -341,6 +376,8 @@ html.home #categories .card.card-outer.expanded .subcategory-container a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 16px;
+    margin: 0;
   }
 }
 
@@ -394,6 +431,17 @@ html.search .category-list .collapsible-body {
 html.search .category-list .collapsible-header {
   background-color: #0a6ebd;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  html.search .results .card-content {
+    padding: 8px;
+  }
+
+  html.search .results .card-title {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 
 html.search .results .masonry-item {

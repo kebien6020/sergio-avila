@@ -57,6 +57,15 @@ html.home {
       top: 0;
     }
 
+    & > .card-content {
+      @media #{$small-and-down} {
+        padding: 8px;
+      }
+      & > .card-title {
+        @include truncate;
+      }
+    }
+
   }
 
   .card-content {
@@ -129,6 +138,15 @@ html.home {
         }
       }
 
+      @media #{$small-and-down} {
+        @for $i from 1 through 4 {
+          .inner-card-wrapper:first-child:nth-last-child(#{$i}),
+          .inner-card-wrapper:first-child:nth-last-child(#{$i}) ~ div {
+            width: 100%;
+          }
+        }
+      }
+
       a {
         display: block;
         z-index: 200;
@@ -144,6 +162,8 @@ html.home {
           display: inline-block;
           .card-title {
             @include truncate;
+            font-size: 16px;
+            margin: 0;
           }
 
           margin-top: 2px;
