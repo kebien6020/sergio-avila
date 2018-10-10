@@ -37,3 +37,49 @@ Route::middleware('api')->get('/autosuggest', function(Request $request) {
 
   return Item::all();
 });
+
+Route::middleware('api')->get('/existences/{code}', function ($code) {
+  $client = new nusoap_client(
+    realpath('../public/api.wsdl'),
+    'wsdl'
+  );
+  $err = $client->getError();
+
+  if ($err) {
+  	return collect([
+      'success' => false,
+      'error' => $err,
+      'debug' => $client->getDebug()
+    ])->toJson();
+  }
+
+  $params = [
+    'codigo' => $code,
+    'distribuidor' => 'COL0015',
+  ];
+
+  $result = $client->call('existencias', $params);
+
+  if ($client->fault) {
+    return collect([
+      'success' => false,
+      'error' => 'Fault (Expect - The request contains an invalid SOAP body)',
+      'debug' => $result->faultstring
+    ])->toJson();
+  }
+
+  $err = $client->getError();
+
+  if ($err) {
+    return collect([
+      'success' => false,
+      'error' => $err,
+      'result' => $result,
+    ])->toJson();
+  }
+
+  $res = $result['existenciasResult'];
+  $res['success'] = true;
+
+  return collect($res)->toJson();
+});
