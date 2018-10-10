@@ -17,7 +17,7 @@ for (const $elem of outerCards) {
   $elem.addEventListener('click', function(event) {
     const inner = this.querySelector('.subcategory-container')
     if (!inner) return
-    inner.style.display = 'flex'
+    inner.style.display = ''
 
     // Convert to position fixed before animation
     const xCoord = this.offsetLeft - window.pageXOffset

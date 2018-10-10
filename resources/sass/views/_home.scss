@@ -69,7 +69,7 @@ html.home {
     top: 50vh !important;
     left: 0 !important;
     width: 100% !important;
-    height: 340px !important;
+    height: 350px !important;
     transform: translateY(-50%);
     margin: 0;
     padding: 0;
@@ -99,9 +99,12 @@ html.home {
     }
 
     .subcategory-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      display: block;
+      @media #{$medium-and-up} {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
 
       transform: scaleX(1) scaleY(1);
       width: 100%;
@@ -114,6 +117,16 @@ html.home {
       .inner-card-wrapper {
         padding-left: 8px;
         padding-right: 8px;
+        @media #{$small-and-down} {
+          display: inline-block;
+          height: 64px;
+          width: calc(50% - 8px);
+          padding: 0;
+
+          .card-content {
+            border-top-width: 0;
+          }
+        }
       }
 
       a {
@@ -122,9 +135,20 @@ html.home {
       }
 
       .card {
-        height: 220px;
-        min-width: 130px;
-        max-width: 170px;
+        @media #{$small-and-down} {
+          img {
+            display: none;
+          }
+          height: 100%;
+          width: 100%;
+          display: inline-block;
+          .card-title {
+            @include truncate;
+          }
+
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
 
         @media #{$medium-and-up} {
           height: 300px;

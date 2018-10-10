@@ -113,7 +113,7 @@ try {
 
       var inner = this.querySelector('.subcategory-container');
       if (!inner) return;
-      inner.style.display = 'flex';
+      inner.style.display = '';
 
       // Convert to position fixed before animation
       var xCoord = this.offsetLeft - window.pageXOffset;

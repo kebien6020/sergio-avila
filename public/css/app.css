@@ -238,7 +238,7 @@ html.home #categories .card.card-outer.expanded {
   top: 50vh !important;
   left: 0 !important;
   width: 100% !important;
-  height: 340px !important;
+  height: 350px !important;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   margin: 0;
@@ -276,15 +276,7 @@ html.home #categories .card.card-outer.expanded > .card-content {
 }
 
 html.home #categories .card.card-outer.expanded .subcategory-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  display: block;
   -webkit-transform: scaleX(1) scaleY(1);
           transform: scaleX(1) scaleY(1);
   width: 100%;
@@ -294,9 +286,36 @@ html.home #categories .card.card-outer.expanded .subcategory-container {
   padding-right: 16px;
 }
 
+@media only screen and (min-width: 601px) {
+  html.home #categories .card.card-outer.expanded .subcategory-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper {
   padding-left: 8px;
   padding-right: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper {
+    display: inline-block;
+    height: 64px;
+    width: calc(50% - 8px);
+    padding: 0;
+  }
+
+  html.home #categories .card.card-outer.expanded .subcategory-container .inner-card-wrapper .card-content {
+    border-top-width: 0;
+  }
 }
 
 html.home #categories .card.card-outer.expanded .subcategory-container a {
@@ -304,10 +323,25 @@ html.home #categories .card.card-outer.expanded .subcategory-container a {
   z-index: 200;
 }
 
-html.home #categories .card.card-outer.expanded .subcategory-container .card {
-  height: 220px;
-  min-width: 130px;
-  max-width: 170px;
+@media only screen and (max-width: 600px) {
+  html.home #categories .card.card-outer.expanded .subcategory-container .card {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  html.home #categories .card.card-outer.expanded .subcategory-container .card img {
+    display: none;
+  }
+
+  html.home #categories .card.card-outer.expanded .subcategory-container .card .card-title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media only screen and (min-width: 601px) {
