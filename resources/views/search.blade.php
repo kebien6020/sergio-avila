@@ -22,15 +22,36 @@
 
   <div class="row">
     <section class="category-list col s12 l3">
-      <ul class="collapsible">
+      <ul class="collapsible expandable">
         <li class="active">
           <div class="collapsible-header">
             <i class="material-icons">ballot</i>
             Sub-categorías
+            <div class="expand-icon">
+              <i class="material-icons on-active">expand_less</i>
+              <i class="material-icons on-inactive">expand_more</i>
+            </div>
           </div>
           <div class="collapsible-body">
             <div class="collection">
               @foreach ($families as $family)
+                <a href="/search?fam=[{{ $family->code }}]" class="collection-item">{{ $family->name }}</a>
+              @endforeach
+            </div>
+          </div>
+        </li>
+        <li class="all-families">
+          <div class="collapsible-header">
+            <i class="material-icons">category</i>
+            Todas las categorías
+            <div class="expand-icon">
+              <i class="material-icons on-active">expand_less</i>
+              <i class="material-icons on-inactive">expand_more</i>
+            </div>
+          </div>
+          <div class="collapsible-body">
+            <div class="collection">
+              @foreach ($allFamilies as $family)
                 <a href="/search?fam=[{{ $family->code }}]" class="collection-item">{{ $family->name }}</a>
               @endforeach
             </div>

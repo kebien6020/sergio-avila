@@ -57,7 +57,8 @@ Route::get('/search', function (Request $req) {
 
     return view('search', [
       'items' => $items,
-      'families' => $families
+      'families' => $families,
+      'allFamilies' => Family::all(),
     ]);
 });
 

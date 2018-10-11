@@ -1021,7 +1021,15 @@ var imagesloaded = __webpack_require__(5);
 
 // Collapsibles
 var collapsibles = document.querySelectorAll('.collapsible');
-M.Collapsible.init(collapsibles);
+var collapInstance = M.Collapsible.init(collapsibles, {
+  accordion: false
+});
+
+// on med-and-up expand
+var allFamilies = document.querySelector('.collapsible .all-families');
+if (window.innerWidth > 992) {
+  collapInstance[0].open(1);
+}
 
 // Masonry
 var masonry = new Masonry('.results .masonry', {

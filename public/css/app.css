@@ -474,6 +474,27 @@ html.search .category-list .collapsible-header {
   color: white;
 }
 
+html.search .category-list li .expand-icon {
+  margin-left: auto;
+  vertical-align: middle;
+}
+
+html.search .category-list li .on-active {
+  display: none;
+}
+
+html.search .category-list li .on-inactive {
+  display: inline;
+}
+
+html.search .category-list li.active .on-active {
+  display: inline;
+}
+
+html.search .category-list li.active .on-inactive {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   html.search .results .card-content {
     padding: 8px;

@@ -9,6 +9,20 @@ html.search {
     background-color: $primary-color-dark;
     color: white;
   }
+
+  li {
+    .expand-icon {
+      margin-left: auto;
+      vertical-align: middle;
+    }
+    .on-active { display: none; }
+    .on-inactive { display: inline; }
+  }
+
+  li.active {
+    .on-active { display: inline; }
+    .on-inactive { display: none; }
+  }
 }
 
 

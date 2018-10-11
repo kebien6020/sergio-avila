@@ -4,7 +4,15 @@ const imagesloaded = require('imagesloaded')
 
 // Collapsibles
 const collapsibles = document.querySelectorAll('.collapsible')
-M.Collapsible.init(collapsibles)
+const collapInstance = M.Collapsible.init(collapsibles, {
+  accordion: false
+})
+
+// on med-and-up expand
+const allFamilies = document.querySelector('.collapsible .all-families')
+if (window.innerWidth > 992) {
+  collapInstance[0].open(1)
+}
 
 // Masonry
 const masonry = new Masonry( '.results .masonry', {
