@@ -49,6 +49,7 @@ body {
   }
   .brand-logo > img, .brand-logo > object {
     @include nav-height;
+    pointer-events: none;
   }
 }
 

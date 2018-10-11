@@ -46,6 +46,7 @@ body {
 .nav-wrapper .brand-logo > img,
 .nav-wrapper .brand-logo > object {
   height: 56px;
+  pointer-events: none;
 }
 
 @media only screen and (min-width: 601px) {
