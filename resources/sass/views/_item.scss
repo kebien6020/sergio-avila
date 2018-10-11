@@ -13,6 +13,7 @@ html.item {
 
 .descr {
   h3 { margin-top: 8px; }
+  h3, h4 { @include title-font; }
 }
 
 .slider {

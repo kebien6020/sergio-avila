@@ -148,6 +148,9 @@ nav {
 }
 
 footer {
+  h5, h6 {
+    @include title-font;
+  }
   .map {
     width: 100%;
     height: 250px;

@@ -2,6 +2,9 @@ html.home {
 
 
 .about {
+  h3 {
+    @include title-font;
+  }
   .parallax-container {
     height: 350px;
   }
@@ -15,6 +18,7 @@ html.home {
 
   h3 {
     text-align: center;
+    @include title-font;
   }
 
   $card-transition: all 0.2s ease-out;
@@ -207,6 +211,7 @@ html.home {
     padding-bottom: 16px;
     background-color: $secondary-color;
     color: color("shades", "white");
+    @include title-font;
   }
 
   form .col {

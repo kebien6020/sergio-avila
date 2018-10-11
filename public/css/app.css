@@ -166,6 +166,11 @@ nav .search-btn-container {
   right: 0;
 }
 
+footer h5,
+footer h6 {
+  font-family: "EB Garamond", serif;
+}
+
 footer .map {
   width: 100%;
   height: 250px;
@@ -203,6 +208,10 @@ footer .sub-contact .sub-text p {
   margin: 2px 0;
 }
 
+html.home .about h3 {
+  font-family: "EB Garamond", serif;
+}
+
 html.home .about .parallax-container {
   height: 350px;
 }
@@ -214,6 +223,7 @@ html.home .about .about-text {
 
 html.home #categories h3 {
   text-align: center;
+  font-family: "EB Garamond", serif;
 }
 
 html.home #categories a {
@@ -447,6 +457,7 @@ html.home #contact .title h4 {
   padding-bottom: 16px;
   background-color: #0a6ebd;
   color: #FFFFFF;
+  font-family: "EB Garamond", serif;
 }
 
 html.home #contact form .col {
@@ -497,6 +508,11 @@ html.item .thumbs .thumb-img {
 
 html.item .descr h3 {
   margin-top: 8px;
+}
+
+html.item .descr h3,
+html.item .descr h4 {
+  font-family: "EB Garamond", serif;
 }
 
 html.item .slider .slides {

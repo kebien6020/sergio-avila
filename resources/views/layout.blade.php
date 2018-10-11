@@ -12,6 +12,10 @@
         {{-- Fonts --}}
         {{-- Google Icon Font --}}
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {{-- Garamond --}}
+        <link href="https://fonts.googleapis.com/icon?family=EB+Garamond" rel="stylesheet">
+        {{-- Optima --}}
+        <link href="/fonts/optima.css" rel="stylesheet">
 
         {{-- Styles --}}
         {{-- Main styles --}}
