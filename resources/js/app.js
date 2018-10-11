@@ -41,7 +41,7 @@ M.Sidenav.init(sidenavTriggers)
 
 // Position nav options depending on img width
 const $navOptions = document.querySelector('.nav-wrapper > ul')
-const $logoImg = document.querySelector('.brand-logo img')
+const $logoImg = document.querySelector('.brand-logo')
 
 $navOptions.style.paddingLeft = $logoImg.width + 'px'
 

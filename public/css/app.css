@@ -29,12 +29,28 @@ body {
   }
 }
 
-.nav-wrapper .brand-logo > img {
+.nav-wrapper .brand-logo > * {
+  float: left;
+}
+
+.nav-wrapper .brand-logo .whatsapp {
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-wrapper .brand-logo .whatsapp {
+    font-size: 16px;
+  }
+}
+
+.nav-wrapper .brand-logo > img,
+.nav-wrapper .brand-logo > object {
   height: 56px;
 }
 
 @media only screen and (min-width: 601px) {
-  .nav-wrapper .brand-logo > img {
+  .nav-wrapper .brand-logo > img,
+  .nav-wrapper .brand-logo > object {
     height: 64px;
   }
 }

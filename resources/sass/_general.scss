@@ -37,7 +37,17 @@ body {
 // Navbar
 
 .nav-wrapper {
-  .brand-logo > img {
+  .brand-logo > * {
+    float: left;
+  }
+
+  .brand-logo .whatsapp {
+    font-size: 24px;
+    @media #{$small-and-down} {
+      font-size: 16px;
+    }
+  }
+  .brand-logo > img, .brand-logo > object {
     @include nav-height;
   }
 }
