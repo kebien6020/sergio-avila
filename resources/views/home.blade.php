@@ -119,7 +119,7 @@
             <h4 class="card-panel">Contactenos</h4>
           </div>
         </div>
-        <form action="https://formspree.io/kevin.pena.prog@gmail.com" method="post">
+        <form action="https://formspree.io/manager@texto-print.com" method="post">
           <div class="row">
             <div class="input-field col s12 m6">
               <input
