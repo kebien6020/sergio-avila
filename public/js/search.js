@@ -940,15 +940,19 @@ var loadPage = function () {
 
             tempContainer.innerHTML = partial;
 
+            // Array.from beacause it was updating since its live
+            // and skipping elements
             _iteratorNormalCompletion = true;
             _didIteratorError = false;
             _iteratorError = undefined;
             _context.prev = 19;
-            for (_iterator = tempContainer.children[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            for (_iterator = Array.from(tempContainer.children)[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
               elem = _step.value;
 
               target.append(elem);
-            }_context.next = 27;
+            }
+
+            _context.next = 27;
             break;
 
           case 23:

@@ -85,8 +85,11 @@ async function loadPage() {
     const tempContainer = document.createElement('div')
     tempContainer.innerHTML = partial
 
-    for (const elem of tempContainer.children)
+    // Array.from beacause it was updating since its live
+    // and skipping elements
+    for (const elem of Array.from(tempContainer.children)){
       target.append(elem)
+    }
 
     masonry.appended(tempContainer.children)
     const items = masonry.addItems(tempContainer.children)
