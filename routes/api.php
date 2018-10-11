@@ -28,6 +28,7 @@ Route::middleware('api')->get('/autosuggest', function(Request $request) {
       ->load('images')
       ->map(function($item) {
         return collect([
+          'code' => $item->code,
           'name' => $item->name,
           'image' => $item->images->first()->url
         ]);

@@ -18,7 +18,7 @@
     <div class="search-bar">
       <form>
         <div class="input-field">
-          <input id="search" type="search" required>
+          <input id="search" type="search" required autocomplete="off">
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons search-btn-close">close</i>
         </div>

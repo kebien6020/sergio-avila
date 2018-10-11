@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 const M = require('materialize-css')
+const axios = require('axios')
 
 // Navbar search button behavior
 const searchElems = document.querySelectorAll('.nav-wrapper li.search')
@@ -69,3 +70,140 @@ function closeSearchBar() {
 
 closeBtn.addEventListener('click', closeSearchBar)
 searchInput.addEventListener('blur', closeSearchBar)
+
+// Search functionality
+
+// Modify dropdown filtering
+
+// Adapted from:
+// https://github.com/Dogfalo/materialize/blob/ac5c80e330321ea04d87bdbe9b204d565ebf246c/js/autocomplete.js#L344
+const renderDropdownModified = function(data, val) {
+  const $ = window.cash
+  this._resetAutocomplete();
+
+  let matchingData = [];
+
+  // Gather all matching data
+
+  //
+  // Another modification
+  //
+  this.count = 0
+  for (let key in data) {
+    //
+    // Here is the modification
+    //
+    if (data.hasOwnProperty(key) /* && key.toLowerCase().indexOf(val) !== -1 */) {
+      // Break if past limit
+      if (this.count >= this.options.limit) {
+        break;
+      }
+
+      let entry = {
+        data: data[key],
+        key: key
+      };
+      matchingData.push(entry);
+
+      this.count++;
+    }
+  }
+  // Sort
+  if (this.options.sortFunction) {
+    let sortFunctionBound = (a, b) => {
+      return this.options.sortFunction(
+        a.key.toLowerCase(),
+        b.key.toLowerCase(),
+        val.toLowerCase()
+      );
+    };
+    matchingData.sort(sortFunctionBound);
+  }
+
+  // Render
+  for (let i = 0; i < matchingData.length; i++) {
+    let entry = matchingData[i];
+    let $autocompleteOption = $('<li></li>');
+    if (!!entry.data) {
+      $autocompleteOption.append(
+        `<img src="${entry.data}" class="right circle"><span>${entry.key}</span>`
+      );
+    } else {
+      $autocompleteOption.append('<span>' + entry.key + '</span>');
+    }
+
+    $(this.container).append($autocompleteOption);
+    // Highlight doesn't work on multiple matches
+    // and it messes up the rendered text
+
+    // this._highlight(val, $autocompleteOption);
+  }
+}
+
+M.Autocomplete.prototype._renderDropdown = renderDropdownModified
+
+const autoCompleteInstace = M.Autocomplete.init(searchInput, {
+  data: {},
+  limit: 15,
+  sortFunction: false,
+  onAutocomplete(name) {
+    const fullData = autoCompleteInstace.options.data[Symbol.for('FULLDATA')]
+    const items = fullData.filter(item => item.name === name)
+
+    if (items.length > 0) {
+      const code = items[0].code
+      window.location.href = '/item/' + code.replace(' ', '_')
+    }
+  }
+})
+
+// Taken from:
+// https://codeburst.io/throttling-and-debouncing-in-javascript-646d076d0a44
+function debounced(delay, fn) {
+  let timerId;
+  return function (...args) {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    timerId = setTimeout(() => {
+      fn(...args);
+      timerId = null;
+    }, delay);
+  }
+}
+
+function getSuggestions(text) {
+  return axios.get('/api/autosuggest', {
+    params: { term: text }
+  })
+}
+
+// Get suggestions while writing (debounced)
+searchInput.addEventListener('input', debounced(300, async (event) => {
+  const text = event.target.value
+  if (typeof text !== 'string')
+    return
+
+  const suggestions = await getSuggestions(text)
+  const data = suggestions.data.reduce((obj, sug) =>
+    (obj[sug.name] = sug.image, obj) // comma operator
+  , {})
+
+  // Hide fulldata inside normal data object
+  data[Symbol.for('FULLDATA')] = suggestions.data
+
+  autoCompleteInstace.updateData(data)
+  autoCompleteInstace.open()
+}))
+
+// On submit select the first element
+const searchForm = document.querySelector('.search-bar form')
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault()
+
+  const fullData = autoCompleteInstace.options.data[Symbol.for('FULLDATA')]
+
+  if (fullData.length > 0) {
+    autoCompleteInstace.options.onAutocomplete(fullData[0].name)
+  }
+})
