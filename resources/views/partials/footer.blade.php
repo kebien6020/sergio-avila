@@ -43,6 +43,15 @@
             <p>manager@texto-print.com</p>
           </div>
         </div>
+        <div class="sub-contact">
+          <div class="sub-icon">
+            <i class="material-icons">web</i>
+          </div>
+          <div class="sub-text">
+            <h6>Otro Sitio del Grupo</h6>
+            <img src="/images/logo-alt-site.png" alt="Logo otro sitio">
+          </div>
+        </div>
 
       </div>
       <div class="col l6 offset-l2 s12">
