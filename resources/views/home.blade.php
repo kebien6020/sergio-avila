@@ -7,10 +7,12 @@
 
 <section class="about">
   <div class="parallax-container">
-    <div class="parallax"><img src="/images/about-bg.jpg"></div>
-    <div class="about-text">
-      <h2>Promo Print</h2>
-      <p>Siempre listo para brindar soluciones en sus eventos corporativos, regalos promocionales y en su empresa.</p>
+    <div class="parallax"><img src="/images/banner.jpg"></div>
+    <div class="valign-wrapper">
+      <div class="about-text">
+        <h2>Promo Print</h2>
+        <p>Siempre listo para brindar soluciones en sus eventos corporativos, regalos promocionales y en su empresa.</p>
+      </div>
     </div>
   </div>
 </section>

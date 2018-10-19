@@ -18,11 +18,11 @@ html.home {
     @media #{$large-and-up}  { font-size: 42px; }
   }
 
-  .parallax-container {
-    height: 350px;
+  .parallax-container, .valign-wrapper {
+    height: 400px;
   }
   .about-text {
-    color: white;
+    color: black;
     text-align: center;
   }
 }

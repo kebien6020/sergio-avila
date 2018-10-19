@@ -283,12 +283,13 @@ html.home .about p {
   }
 }
 
-html.home .about .parallax-container {
-  height: 350px;
+html.home .about .parallax-container,
+html.home .about .valign-wrapper {
+  height: 400px;
 }
 
 html.home .about .about-text {
-  color: white;
+  color: black;
   text-align: center;
 }
 
