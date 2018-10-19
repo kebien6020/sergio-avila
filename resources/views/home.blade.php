@@ -9,8 +9,8 @@
   <div class="parallax-container">
     <div class="parallax"><img src="/images/about-bg.jpg"></div>
     <div class="about-text">
-      <h3>Sobre nosotros</h3>
-      <h5>Texto sobre nosotros</h5>
+      <h2>Promo Print</h2>
+      <p>Siempre listo para brindar soluciones en sus eventos corporativos, regalos promocionales y en su empresa.</p>
     </div>
   </div>
 </section>

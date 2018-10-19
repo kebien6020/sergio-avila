@@ -4,6 +4,7 @@
 
 body {
   scroll-behavior: smooth;
+  min-width: 320px;
 }
 
 #scrim {
@@ -245,8 +246,41 @@ footer .sub-contact .sub-text p {
   margin: 2px 0;
 }
 
-html.home .about h3 {
+html.home .about h2,
+html.home .about p {
   font-family: "EB Garamond", serif;
+}
+
+html.home .about h2 {
+  font-size: 48px;
+}
+
+@media only screen and (min-width: 601px) {
+  html.home .about h2 {
+    font-size: 52px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  html.home .about h2 {
+    font-size: 56px;
+  }
+}
+
+html.home .about p {
+  font-size: 28px;
+}
+
+@media only screen and (min-width: 601px) {
+  html.home .about p {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  html.home .about p {
+    font-size: 42px;
+  }
 }
 
 html.home .about .parallax-container {

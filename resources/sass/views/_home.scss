@@ -2,9 +2,22 @@ html.home {
 
 
 .about {
-  h3 {
+  h2, p {
     @include title-font;
   }
+
+  h2 {
+    font-size: 48px;
+    @media #{$medium-and-up} { font-size: 52px; }
+    @media #{$large-and-up}  { font-size: 56px; }
+  }
+
+  p {
+    font-size: 28px;
+    @media #{$medium-and-up} { font-size: 36px; }
+    @media #{$large-and-up}  { font-size: 42px; }
+  }
+
   .parallax-container {
     height: 350px;
   }
