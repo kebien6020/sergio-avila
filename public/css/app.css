@@ -29,36 +29,71 @@ body {
   }
 }
 
+.nav-wrapper .brand-logo {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+}
+
 .nav-wrapper .brand-logo > * {
   float: left;
 }
 
-.nav-wrapper .brand-logo .whatsapp {
-  font-size: 24px;
-}
-
-@media only screen and (max-width: 600px) {
-  .nav-wrapper .brand-logo .whatsapp {
-    font-size: 16px;
-  }
-}
-
 .nav-wrapper .brand-logo > img,
 .nav-wrapper .brand-logo > object {
-  height: 56px;
+  height: 48px;
   pointer-events: none;
 }
 
 @media only screen and (min-width: 601px) {
   .nav-wrapper .brand-logo > img,
   .nav-wrapper .brand-logo > object {
-    height: 64px;
+    height: 56px;
   }
 }
 
+.nav-wrapper .search-btn-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media only screen and (min-width: 993px) {
+  .nav-wrapper .search-btn-container {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: inline-block;
+  }
+}
+
+.nav-wrapper .whatsapp {
+  position: absolute;
+  top: 0;
+  display: none;
+  right: 54px;
+}
+
+@media only screen and (min-width: 601px) {
+  .nav-wrapper .whatsapp {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .nav-wrapper .whatsapp {
+    right: 0;
+  }
+}
+
+.nav-wrapper .whatsapp a {
+  font-size: 24px !important;
+}
+
 .nav-wrapper > ul#nav-mobile {
-  width: 100%;
-  padding-left: 250px;
+  width: auto;
+  display: inline-block;
+  padding-left: 59px;
 }
 
 .nav-wrapper > ul#nav-mobile:after {
@@ -106,17 +141,8 @@ body {
   width: 100%;
 }
 
-nav ul#nav-mobile a:hover {
+nav ul a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-nav .dropdown-content.dropdown-outer {
-  overflow-y: visible;
-}
-
-nav .dropdown-content.dropdown-nested {
-  margin-left: 100%;
-  left: 0 !important;
 }
 
 a.breadcrumb {
@@ -175,12 +201,6 @@ nav .search-bar {
 
 nav .search-bar.show {
   opacity: 1;
-}
-
-nav .search-btn-container {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 footer h5,

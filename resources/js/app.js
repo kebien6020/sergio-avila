@@ -43,7 +43,7 @@ M.Sidenav.init(sidenavTriggers)
 const $navOptions = document.querySelector('.nav-wrapper > ul')
 const $logoImg = document.querySelector('.brand-logo')
 
-$navOptions.style.paddingLeft = $logoImg.width + 'px'
+$navOptions.style.paddingLeft = $logoImg.clientWidth + 'px'
 
 // Search bar
 

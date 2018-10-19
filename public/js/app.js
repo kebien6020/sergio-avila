@@ -948,7 +948,7 @@ M.Sidenav.init(sidenavTriggers);
 var $navOptions = document.querySelector('.nav-wrapper > ul');
 var $logoImg = document.querySelector('.brand-logo');
 
-$navOptions.style.paddingLeft = $logoImg.width + 'px';
+$navOptions.style.paddingLeft = $logoImg.clientWidth + 'px';
 
 // Search bar
 

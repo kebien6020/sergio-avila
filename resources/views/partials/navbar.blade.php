@@ -1,24 +1,24 @@
 <nav aria-role="navigation">
   <div class="nav-wrapper blue darken-2">
     <a href="/" class="brand-logo">
-      {{-- <img src="/images/logo.png" alt="Logo de la Empresa"> --}}
-      <object type="image/svg+xml" data="/images/logo.svg">
-        Su navegador no soporta SVG
-      </object>
-      <span class="whatsapp">
-        305 717 3218
-        <span class="fab fa-whatsapp"></span>
-      </span>
+      <img src="/images/logo.jpg" alt="Logo de la Empresa">
     </a>
     <a href="#" data-target="sidenav-mobile" class="sidenav-trigger">
       <i class="material-icons">menu</i>
     </a>
     <ul id="nav-mobile">
-      <li><a href="/#categories">Categorías</a></li>
-      <li><a href="/search">Catálogo</a></li>
+      <li><a href="/#categories">CATEGORÍAS</a></li>
+      <li><a href="/search">CATÁLOGO</a></li>
     </ul>
     <ul class="search-btn-container">
       <li><a href="#!"><i class="material-icons">search</i></a></li>
+    </ul>
+    <ul class="whatsapp">
+      <li>
+        <a href="https://api.whatsapp.com/send?phone=573057173218">
+          305 717 3218 <span class="fab fa-whatsapp"></span>
+        </a>
+      </li>
     </ul>
 
     {{-- Search form --}}
@@ -34,7 +34,12 @@
 
   </div>
   <ul class="sidenav" id="sidenav-mobile">
-    <li><a href="/#categories">Categorías</a></li>
-    <li><a href="/search">Catálogo</a></li>
+    <li><a href="/#categories">CATEGORÍAS</a></li>
+    <li><a href="/search">CATÁLOGO</a></li>
+    <li>
+      <a href="https://api.whatsapp.com/send?phone=573057173218">
+        305 717 3218 <span class="fab fa-whatsapp"></span>
+      </a>
+    </li>
   </ul>
 </nav>

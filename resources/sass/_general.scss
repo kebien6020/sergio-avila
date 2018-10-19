@@ -37,26 +37,57 @@ body {
 // Navbar
 
 .nav-wrapper {
+  $logo-padding-v: 4px;
+  $logo-padding-h: 16px;
+  .brand-logo {
+    padding-top: $logo-padding-v;
+    padding-bottom: $logo-padding-v;
+    padding-left: $logo-padding-h;
+  }
   .brand-logo > * {
     float: left;
   }
 
-  .brand-logo .whatsapp {
-    font-size: 24px;
-    @media #{$small-and-down} {
-      font-size: 16px;
+  .brand-logo > img, .brand-logo > object {
+    @include nav-height(-($logo-padding-v * 2));
+    pointer-events: none;
+  }
+
+  $search-btn-width: 54px;
+
+  .search-btn-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media #{$large-and-up} {
+      position: relative;
+      top: auto;
+      right: auto;
+      display: inline-block;
     }
   }
-  .brand-logo > img, .brand-logo > object {
-    @include nav-height;
-    pointer-events: none;
+
+  .whatsapp {
+    position: absolute;
+    top: 0;
+
+    display: none;
+    @media  #{$medium-and-up} { display: block; }
+
+    right: $search-btn-width;
+    @media #{$large-and-up} { right: 0; }
+
+    a {
+      font-size: 24px !important;
+    }
   }
 }
 
 .nav-wrapper > ul#nav-mobile {
   @include clearfix;
-  width: 100%;
-  padding-left: 250px;  // Initial estimate, overriden by js
+  width: auto;
+  display: inline-block;
+  padding-left: 59px;  // Initial estimate, overriden by js
   & > li {
     @media #{$medium-and-down} {
       display: none;
@@ -88,21 +119,8 @@ body {
   }
 }
 
-nav ul#nav-mobile a:hover {
+nav ul a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-// Nested Dropdown
-nav {
-  .dropdown-content {
-    &.dropdown-outer {
-      overflow-y: visible;
-    }
-    &.dropdown-nested {
-      margin-left: 100%;
-      left: 0 !important;
-    }
-  }
 }
 
 // Breadcrumbs
@@ -149,12 +167,6 @@ nav {
     &.show {
       opacity: 1;
     }
-  }
-
-  .search-btn-container {
-    position: absolute;
-    top: 0;
-    right: 0;
   }
 }
 

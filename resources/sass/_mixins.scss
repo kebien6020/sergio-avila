@@ -1,9 +1,9 @@
 
 // Responsive height of the navbar
-@mixin nav-height {
-  height: $navbar-height-mobile;
+@mixin nav-height($modificator: 0) {
+  height: $navbar-height-mobile + $modificator;
   @media #{$medium-and-up} {
-    height: $navbar-height;
+    height: $navbar-height + $modificator;
   }
 }
 
