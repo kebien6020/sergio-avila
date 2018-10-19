@@ -226,7 +226,7 @@ html.home {
     margin-top: -36px;
     padding-top: 16px;
     padding-bottom: 16px;
-    background-color: $secondary-color;
+    background-color: $primary-color;
     color: color("shades", "white");
     @include title-font;
   }
@@ -234,6 +234,13 @@ html.home {
   form .col {
     margin-top: 8px;
     margin-bottom: 8px;
+  }
+
+  button {
+    background-color: $primary-color;
+    &:hover {
+      background-color: $primary-color-light;
+    }
   }
 
 }

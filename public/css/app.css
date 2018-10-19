@@ -531,7 +531,7 @@ html.home #contact .title h4 {
   margin-top: -36px;
   padding-top: 16px;
   padding-bottom: 16px;
-  background-color: #0a6ebd;
+  background-color: #3792D0;
   color: #FFFFFF;
   font-family: "EB Garamond", serif;
 }
@@ -541,12 +541,20 @@ html.home #contact form .col {
   margin-bottom: 8px;
 }
 
+html.home #contact button {
+  background-color: #3792D0;
+}
+
+html.home #contact button:hover {
+  background-color: #75b4df;
+}
+
 html.search .category-list .collapsible-body {
   padding: 0;
 }
 
 html.search .category-list .collapsible-header {
-  background-color: #0a6ebd;
+  background-color: #3792D0;
   color: white;
 }
 

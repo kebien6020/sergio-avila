@@ -1,5 +1,5 @@
 <nav aria-role="navigation">
-  <div class="nav-wrapper blue darken-2">
+  <div class="nav-wrapper">
     <a href="/" class="brand-logo">
       <img src="/images/logo.jpg" alt="Logo de la Empresa">
     </a>
