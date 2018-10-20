@@ -264,6 +264,10 @@ footer .sub-contact .sub-text p {
   font-size: 24px;
 }
 
+footer .footer-copyright {
+  padding-left: 16px !important;
+}
+
 html.home .about h2,
 html.home .about p {
   font-family: "EB Garamond", serif;
