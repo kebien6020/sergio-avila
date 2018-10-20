@@ -37,9 +37,10 @@ body {
 
 // Navbar
 
+$logo-padding-v: 4px;
+$logo-padding-h: 16px;
+
 .nav-wrapper {
-  $logo-padding-v: 4px;
-  $logo-padding-h: 16px;
   .brand-logo {
     padding-top: $logo-padding-v;
     padding-bottom: $logo-padding-v;
@@ -175,6 +176,19 @@ footer {
   h5, h6 {
     @include title-font;
   }
+  .footer-contact {
+    margin-left: 0 !important;
+    padding-left: $logo-padding-h !important;
+  }
+  .footer-map {
+    padding-right: $logo-padding-h !important;
+    margin-right: 0 !important;
+    @media #{$medium-and-down} {
+      margin-left: 0 !important;
+      padding-left: $logo-padding-h !important;
+    }
+  }
+
   .map {
     width: 100%;
     height: 250px;
@@ -191,14 +205,15 @@ footer {
     }
     .sub-text {
       height: 100%;
+      width: calc(100% - 54px);
       display: inline-block;
       h5, h6 {
         font-size: 24px;
-        font-variant: small-caps;
         margin-bottom: 16px;
       }
       p {
         margin: 2px 0;
+        font-size: 24px;
       }
     }
   }
