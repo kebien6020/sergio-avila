@@ -48,7 +48,7 @@
         </div>
         <div class="sub-text">
           <h6>Otro Sitio del Grupo</h6>
-          <img src="/images/logo-alt-site.png" alt="Logo otro sitio">
+          <img src="/images/logo-alt-site.png" alt="Logo del otro sitio del Grupo: Texto Print">
         </div>
       </div>
 
