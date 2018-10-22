@@ -1,4 +1,4 @@
-<nav aria-role="navigation">
+<nav role="navigation">
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">
       <img src="/images/logo.jpg" alt="Logo de Promo Print">
