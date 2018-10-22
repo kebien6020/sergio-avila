@@ -19,13 +19,34 @@ Route::get('/', function () {
     return view('home');
 });
 
+function getCodesFromRequest(Request $req) {
+  $codes = false;
+  if ($req->has('fam')) {
+    $codeLookup = App\Family::all()
+      ->mapWithKeys(function($fam) {
+        return [$fam->slug => $fam->code];
+      });
+
+    $codes = collect(explode(',', $req->fam))
+      ->map(function ($slug) use ($codeLookup) {
+          if (!$codeLookup->has($slug))
+            return null;
+          return $codeLookup[$slug];
+      })
+      ->filter(function ($val) {
+        return !is_null($val);
+      });
+  }
+
+  return $codes;
+}
+
 function getItemsForPage(Request $req) {
   $items = Item::with(['images', 'family']);
-  if ($req->has('fam')) {
-    $codes = json_decode($req->query('fam'), true);
-    if (!is_null($codes)) {
-      $items = $items->whereIn('family_code', $codes);
-    }
+
+  $codes = getCodesFromRequest($req);
+  if ($codes) {
+    $items = $items->whereIn('family_code', $codes);
   }
   $items = $items->paginate(15);
 
@@ -40,10 +61,7 @@ Route::get('/partials/items', function (Request $req) {
 
 Route::get('/search', function (Request $req) {
 
-    $codes = false;
-    if ($req->has('fam')) {
-      $codes = json_decode($req->query('fam'), true);
-    }
+    $codes = getCodesFromRequest($req);
 
     $items = getItemsForPage($req->merge(['page' => '1']));
 

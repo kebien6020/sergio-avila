@@ -35,7 +35,7 @@
           <div class="collapsible-body">
             <div class="collection">
               @foreach ($families as $family)
-                <a href="/search?fam=[{{ $family->code }}]" class="collection-item">{{ $family->name }}</a>
+                <a href="/search?fam={{ $family->slug }}" class="collection-item">{{ $family->name }}</a>
               @endforeach
             </div>
           </div>
@@ -52,7 +52,7 @@
           <div class="collapsible-body">
             <div class="collection">
               @foreach ($allFamilies as $family)
-                <a href="/search?fam=[{{ $family->code }}]" class="collection-item">{{ $family->name }}</a>
+                <a href="/search?fam={{ $family->slug }}" class="collection-item">{{ $family->name }}</a>
               @endforeach
             </div>
           </div>

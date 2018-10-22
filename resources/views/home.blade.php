@@ -65,7 +65,17 @@
       if (!array_key_exists('fam', $categ)) {
         return '';
       }
-      return '<a href="/search?fam=' . collect($categ['fam'])->toJson(). '">';
+      $slugLookup = App\Family::all()
+        ->mapWithKeys(function($fam) {
+          return [$fam->code => $fam->slug];
+        });
+
+      $slugs = collect($categ['fam'])
+        ->map(function ($famNum) use ($slugLookup) {
+            return $slugLookup[$famNum];
+        })
+        ->implode(',');
+      return '<a href="/search?fam=' . $slugs  . '">';
     }
 
     function genCategLinkTagClose($categ) {

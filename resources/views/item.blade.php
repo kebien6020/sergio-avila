@@ -11,7 +11,7 @@
   <div class="breadcrumbs row">
     <div class="col s12">
       <a href="/#categories" class="breadcrumb">CATEGORÍAS</a>
-      <a href="/search?fam=[{{$item->family_code}}]" class="breadcrumb">
+      <a href="/search?fam={{ $item->family->slug }}" class="breadcrumb">
         {{ $item->family->name }}
       </a>
       <span class="breadcrumb">{{ $item->code }}</span>
