@@ -107,7 +107,7 @@
         {{ renderRow('COLOR', $item->color) }}
         {{ renderRow('CAPACIDAD', $item->capacity) }}
 
-        <tr><th colspan="2">INFORMACIÓN DE IMRESIÓN</th></tr>
+        <tr><th colspan="2">INFORMACIÓN DE IMPRESIÓN</th></tr>
 
         {{ renderRow('TÉCNICA', $item->print_technique) }}
         {{ renderRow('ÁREA', $item->print_area) }}
