@@ -7,6 +7,7 @@
         {{-- SEO --}}
         <meta name="description" content="@yield('descr', 'Promo Print: Regalos publicitarios, empresariales, corporativos, artículos promocionales Bogotá. Bolígrafos publicitarios, llaveros.')">
         <meta name="keywords" content="@yield('keywords', 'regalos publicitarios bogota,articulos promocionales bogota,usb personalizada,regalos empresariales,boligrafos publicitarios,llaveros personalizados')">
+        <meta name="robots" content="index, follow">
 
         <title>
           @yield('title',
