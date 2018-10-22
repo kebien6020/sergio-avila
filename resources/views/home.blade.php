@@ -7,7 +7,7 @@
 
 <section class="about">
   <div class="parallax-container">
-    <div class="parallax"><img src="/images/banner.jpg"></div>
+    <div class="parallax"><img src="/images/banner.jpg" alt="Banner principal"></div>
     <div class="valign-wrapper">
       <div class="about-text">
         <h2>Promo Print</h2>
@@ -81,7 +81,7 @@
         <div class="col s6 m4 l3">
           <div class="card hoverable card-outer">
             <div class="card-image">
-              <img src="images/categ-{{$categ[1]}}.jpg">
+              <img src="images/categ-{{$categ[1]}}.jpg" alt="Foto representando la categoría {{ $categ[0] }}">
             </div>
             <div class="card-content">
               <span class="card-title">{{$categ[0]}}</span>
@@ -93,7 +93,7 @@
                     {!! genCategLinkTagOpen($subcateg) !!}
                       <div class="card hoverable">
                         <div class="card-image">
-                          <img src="images/categ-{{$subcateg[1]}}.jpg">
+                          <img src="images/categ-{{$subcateg[1]}}.jpg" alt="Foto representando la categoría {{ $subcateg[0] }}">
                         </div>
                         <div class="card-content">
                           <span class="card-title">{{$subcateg[0]}}</span>
@@ -113,7 +113,7 @@
 
 <section id="contact">
   <div class="parallax-container">
-    <div class="parallax"><img src="/images/contact-bg.jpg"></div>
+    <div class="parallax"><img src="/images/contact-bg.jpg" alt="Imagen de fondo del formulario de contacto"></div>
     <div class="row">
       <div class="card-panel white col s12 m8 offset-m2 l6 offset-l3">
         <div class="row">

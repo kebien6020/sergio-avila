@@ -1,7 +1,7 @@
 <nav aria-role="navigation">
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">
-      <img src="/images/logo.jpg" alt="Logo de la Empresa">
+      <img src="/images/logo.jpg" alt="Logo de Promo Print">
     </a>
     <a href="#" data-target="sidenav-mobile" class="sidenav-trigger">
       <i class="material-icons">menu</i>

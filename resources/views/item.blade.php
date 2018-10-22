@@ -23,7 +23,7 @@
       <div class="slider card">
         <ul class="slides">
           @foreach ($item->images as $image)
-            <li><img class="materialboxed" src="{!! $image->url !!}"></li>
+            <li><img class="materialboxed" src="{!! $image->url !!}" alt="Foto del artículo {{ $item->name }}"></li>
           @endforeach
         </ul>
       </div>
@@ -34,6 +34,8 @@
               <div
                 class="thumb-img card hoverable"
                 data-num="{{ $loop->index }}"
+                role="img"
+                aria-label="Miniatura de imágenes del artículo"
                 style="background-image: url({{ $image->url }});"></div>
             </li>
           @endforeach
@@ -72,7 +74,7 @@
               <a href="/item/{{ str_replace(' ', '_', $relItem->code) }}">
                 <div class="card hoverable">
                   <div class="card-image">
-                    <img src="{!! $relItem->images->first()->url !!}">
+                    <img src="{!! $relItem->images->first()->url !!}" alt="Artículo en color {{ $relItem->color }}">
                   </div>
                   <div class="card-content">
                     <p>{{ $relItem->name }}</p>
