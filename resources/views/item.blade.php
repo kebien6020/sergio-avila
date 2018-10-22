@@ -3,6 +3,25 @@
 @section('class', 'item')
 @section('js', 'item')
 
+@section('title',
+  title_case($item->family->name . ': ' . $item->name) . ' - Promo Print'
+)
+
+@section('keywords',
+  mb_strtolower(
+    $item->name . ',' . $item->family->name
+  , 'UTF-8') .
+  ',regalos publicitarios bogota,articulos promocionales bogota'
+)
+
+<?php
+  $fullDescr = e(title_case($item->description_1));
+  if($item->description_2 !== '')
+    $fullDescr .= ' (' . e($item->description_2) . ')';
+?>
+
+@section('descr', 'Artículo ' . $fullDescr)
+
 @section('content')
 
 <div class="container">

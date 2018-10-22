@@ -4,6 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        {{-- SEO --}}
+        <meta name="description" content="@yield('descr', 'Promo Print: Regalos publicitarios, empresariales, corporativos, artículos promocionales Bogotá. Bolígrafos publicitarios, llaveros.')">
+        <meta name="keywords" content="@yield('keywords', 'regalos publicitarios bogota,articulos promocionales bogota,usb personalizada,regalos empresariales,boligrafos publicitarios,llaveros personalizados')">
+
+        <title>
+          @yield('title',
+            'Promo Print: Regalos publicitarios, empresariales, artículos promocionales'
+          )
+        </title>
+
         {{-- Favicon --}}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,7 +28,6 @@
         {{-- CSRF Token --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Promo Print</title>
 
         {{-- Fonts --}}
         {{-- Fonts awesome --}}

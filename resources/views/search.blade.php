@@ -3,6 +3,34 @@
 @section('class', 'search')
 @section('js', 'search')
 
+<?php
+  $isCatalog = $families->count() === App\Family::count();
+  $famString = '';
+  $famIsShort = false;
+  if ($isCatalog) {
+    $famString = 'CATÁLOGO';
+  } elseif ($families->count() >= 5) {
+    $famString = 'MULTIPLES CATEGORÍAS';
+  } else {
+    $famIsShort = true;
+    $famString .= $families->pluck('name')->implode(', ');
+  }
+?>
+
+@section('title')
+  @if($famIsShort)
+    {{ str_plural('Categoría', $families->count()) }}
+  @endif
+  {{ title_case($famString) }} - Promo Print
+@endsection
+
+@if ($families->count() < 5)
+  @section('keywords',
+    mb_strtolower($families->pluck('name')->implode(','), 'UTF-8') .
+    ',regalos publicitarios bogota,articulos promocionales bogota'
+  )
+@endif
+
 @section('content')
 
 <div class="container">
@@ -11,11 +39,7 @@
     <div class="col s12">
       <a href="/#categories" class="breadcrumb">CATEGORÍAS</a>
       <span class="breadcrumb">
-        @if ($families->count() >= 5)
-          MULTIPLES CATEGORÍAS
-        @else
-          {{ $families->pluck('name')->implode(', ') }}
-        @endif
+        {{ $famString }}
       </span>
     </div>
   </div>
@@ -23,23 +47,25 @@
   <div class="row">
     <section class="category-list col s12 l3">
       <ul class="collapsible expandable">
-        <li class="active">
-          <div class="collapsible-header">
-            <i class="material-icons">ballot</i>
-            Sub-categorías
-            <div class="expand-icon">
-              <i class="material-icons on-active">expand_less</i>
-              <i class="material-icons on-inactive">expand_more</i>
+        @if (!$isCatalog)
+          <li class="active">
+            <div class="collapsible-header">
+              <i class="material-icons">ballot</i>
+              Sub-categorías
+              <div class="expand-icon">
+                <i class="material-icons on-active">expand_less</i>
+                <i class="material-icons on-inactive">expand_more</i>
+              </div>
             </div>
-          </div>
-          <div class="collapsible-body">
-            <div class="collection">
-              @foreach ($families as $family)
-                <a href="/search?fam={{ $family->slug }}" class="collection-item">{{ $family->name }}</a>
-              @endforeach
+            <div class="collapsible-body">
+              <div class="collection">
+                @foreach ($families as $family)
+                  <a href="/search?fam={{ $family->slug }}" class="collection-item">{{ $family->name }}</a>
+                @endforeach
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        @endif
         <li class="all-families">
           <div class="collapsible-header">
             <i class="material-icons">category</i>
