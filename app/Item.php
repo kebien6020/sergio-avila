@@ -42,4 +42,17 @@ class Item extends Model
     public function images() {
       return $this->hasMany('App\ItemImage', 'item_code', 'code');
     }
+
+    // Genera una version del nombre del articulo que se puede
+    // usar en URLs
+    public function getSlugAttribute() {
+      // Convertir a minuscula. Usando funcion compatible con UTF-8
+      $res = mb_strtolower($this->name, 'UTF-8');
+      // Cambiar espacios por guiones
+      $res = str_replace(' ', '-', $res);
+      // Remover diacriticos (tildes, virgulilla, dieresis)
+      $res = iconv('UTF-8', 'ASCII//TRANSLIT', $res);
+
+      return $res;
+    }
 }

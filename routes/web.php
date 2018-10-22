@@ -62,9 +62,12 @@ Route::get('/search', function (Request $req) {
     ]);
 });
 
-Route::get('/item/{code}', function ($code) {
-  $code = str_replace('_', ' ', $code);
-  $items = Item::where(['code' => $code])->get();
+Route::get('/item/{slug}', function ($slug) {
+  $items = Item::all()
+    ->filter(function ($item) use ($slug) {
+      return $item->slug === $slug;
+    });
+
   if ($items->count() <= 0) {
     return abort(404);
   }
