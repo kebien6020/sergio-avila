@@ -24,13 +24,13 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" itemscope itemtype="https://schema.org/Product">
 
   {{-- Breadcrumbs --}}
   <div class="breadcrumbs row">
     <div class="col s12">
       <a href="/#categories" class="breadcrumb">CATEGORÍAS</a>
-      <a href="/search?fam={{ $item->family->slug }}" class="breadcrumb">
+      <a href="/search?fam={{ $item->family->slug }}" class="breadcrumb" itemprop="category">
         {{ $item->family->name }}
       </a>
       <span class="breadcrumb">{{ $item->code }}</span>
@@ -42,7 +42,7 @@
       <div class="slider card">
         <ul class="slides">
           @foreach ($item->images as $image)
-            <li><img class="materialboxed" src="{!! $image->url !!}" alt="Foto del artículo {{ $item->name }}"></li>
+            <li><img class="materialboxed" src="{!! $image->url !!}" alt="Foto del artículo {{ $item->name }}" itemprop="image"></li>
           @endforeach
         </ul>
       </div>
@@ -63,12 +63,12 @@
     </div>
 
     <div class="descr col s12 l8">
-      <h3>{{ $item->name }}</h3>
-      <small id="item-code" class="flow-text">{{ $item->code }}</small>
+      <h3 itemprop="name">{{ $item->name }}</h3>
+      <small id="item-code" class="flow-text" itemprop="sku">{{ $item->code }}</small>
 
       <h4>Descripción</h4>
       <div class="divider"></div>
-      <p class="flow-text">
+      <p class="flow-text" itemprop="description">
         {{ $item->description_1 }}
         @if($item->description_2 !== '')
           ({{ $item->description_2 }})
@@ -111,9 +111,13 @@
       <table class="striped">
         <?php
           use \Illuminate\Support\HtmlString;
-          function renderRow($text, $value) {
+          function renderRow($text, $value, $prop = '') {
+            $propText = '';
+            if ($prop !== '') {
+              $propText = " itemprop=\"$prop\"";
+            }
             return new HtmlString(
-              '<tr><td>' . e($text) . '</td><td>' . e($value) . '</td>'
+              '<tr><td>' . e($text) . '</td><td' . $propText . '>' . e($value) . '</td>'
             );
           }
         ?>
@@ -123,7 +127,7 @@
         {{ renderRow('CATEGORÍA', $item->family->name) }}
         {{ renderRow('MATERIAL', $item->material) }}
         {{ renderRow('TAMAÑO', $item->size) }}
-        {{ renderRow('COLOR', $item->color) }}
+        {{ renderRow('COLOR', $item->color, 'color') }}
         {{ renderRow('CAPACIDAD', $item->capacity) }}
 
         <tr><th colspan="2">INFORMACIÓN DE IMPRESIÓN</th></tr>
