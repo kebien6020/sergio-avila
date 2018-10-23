@@ -45,6 +45,15 @@
         <link type="text/css" rel="stylesheet" href="/css/vendor.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="/css/app.css"  media="screen,projection"/>
 
+        {{-- Google Analytics --}}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127925063-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-127925063-1');
+        </script>
     </head>
     <body>
       <header>
