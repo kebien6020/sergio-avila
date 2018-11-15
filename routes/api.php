@@ -30,6 +30,7 @@ Route::middleware('api')->get('/autosuggest', function(Request $request) {
         return collect([
           'code' => $item->code,
           'name' => $item->name,
+          'slug' => $item->slug,
           'image' => $item->images->first()->url
         ]);
       })

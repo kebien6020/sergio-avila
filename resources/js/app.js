@@ -151,8 +151,8 @@ const autoCompleteInstace = M.Autocomplete.init(searchInput, {
     const items = fullData.filter(item => item.name === name)
 
     if (items.length > 0) {
-      const code = items[0].code
-      window.location.href = '/item/' + code.replace(' ', '_')
+      const slug = items[0].slug
+      window.location.href = '/item/' + slug
     }
   }
 })
