@@ -90,7 +90,7 @@
         <div class="more-colors masonry row">
           @foreach($moreColors as $relItem)
             <div class="card-wrapper masonry-item col s6 m4 l3">
-              <a href="/item/{{ $item->slug }}">
+              <a href="/item/{{ $relItem->slug }}">
                 <div class="card hoverable">
                   <div class="card-image">
                     <img src="{!! $relItem->images->first()->url !!}" alt="Artículo en color {{ $relItem->color }}">
