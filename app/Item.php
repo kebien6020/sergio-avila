@@ -51,6 +51,7 @@ class Item extends Model
       // Cambiar espacios por guiones
       $res = str_replace(' ', '-', $res);
       // Remover diacriticos (tildes, virgulilla, dieresis)
+      setlocale(LC_ALL, 'en_US');
       $res = iconv('UTF-8', 'ASCII//TRANSLIT', $res);
 
       return $res;

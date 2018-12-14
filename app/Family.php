@@ -20,6 +20,7 @@ class Family extends Model
       // Quitar comas si las hay
       $res = str_replace(',', '', $res);
       // Remover diacriticos (tildes, virgulilla, dieresis)
+      setlocale(LC_ALL, 'en_US');
       $res = iconv('UTF-8', 'ASCII//TRANSLIT', $res);
 
       return $res;
