@@ -193,8 +193,8 @@
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <div class="g-recaptcha" data-sitekey="6LfNHI8UAAAAAJ7mIOfpYAERBkrQggjeBmNJ_94n"></div>
+            <div class="input-field col s12 center">
+              <div class="g-recaptcha" style="display: inline-block;" data-sitekey="6LfNHI8UAAAAAJ7mIOfpYAERBkrQggjeBmNJ_94n"></div>
             </div>
           </div>
           <div class="row">
