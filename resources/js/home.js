@@ -110,10 +110,10 @@ form.addEventListener('submit', (event) => {
 
   const data = new FormData()
 
-  data.add('custom_U2764', firstName + ' ' + lastName)
-  data.add('Email', email)
-  data.add('custom_U2759', `Tel: ${tel}\n${msg}`)
-  data.add('g-recaptcha-response', captchaToken)
+  data.append('custom_U2764', firstName + ' ' + lastName)
+  data.append('Email', email)
+  data.append('custom_U2759', `Tel: ${tel}\n${msg}`)
+  data.append('g-recaptcha-response', captchaToken)
 
 
   fetch('https://botonprint.com/scripts/form-u2756.php', {
