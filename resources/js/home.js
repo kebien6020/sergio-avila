@@ -120,9 +120,8 @@ form.addEventListener('submit', (event) => {
     method: 'POST',
     headers: {
       'Content-Type': 'multipart/form-data',
-      'Accept': 'application/json'
     },
-    body: new URLSearchParams(data).toString(),
+    body: data,
   }).then(res => res.json())
     .then(data => {
       console.log(data)
