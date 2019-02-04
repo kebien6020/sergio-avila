@@ -193,6 +193,11 @@
             </div>
           </div>
           <div class="row">
+            <div class="input-field col s12">
+              <div class="g-recaptcha" data-sitekey="6LfNHI8UAAAAAJ7mIOfpYAERBkrQggjeBmNJ_94n"></div>
+            </div>
+          </div>
+          <div class="row">
             <button class="col s6 offset-s3 m4 offset-m4 btn waves-effect waves-light" type="submit">Enviar
               <i class="material-icons right">send</i>
             </button>
@@ -218,4 +223,6 @@
   </div>
 </div>
 
+{{-- reCAPTCHA js --}}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 @endsection
