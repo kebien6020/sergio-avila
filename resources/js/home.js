@@ -118,9 +118,6 @@ form.addEventListener('submit', (event) => {
 
   fetch('https://www.botonprint.com/scripts/form-u2756.php', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
     body: data,
   }).then(res => res.json())
     .then(data => {
