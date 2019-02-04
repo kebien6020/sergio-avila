@@ -116,7 +116,7 @@ form.addEventListener('submit', (event) => {
   data.append('g-recaptcha-response', captchaToken)
 
 
-  fetch('https://botonprint.com/scripts/form-u2756.php', {
+  fetch('https://www.botonprint.com/scripts/form-u2756.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'multipart/form-data',
