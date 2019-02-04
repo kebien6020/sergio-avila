@@ -131,7 +131,7 @@
             <h4 class="card-panel">Contactenos</h4>
           </div>
         </div>
-        <form action="https://formspree.io/sergiocamilo@gmail.com" method="post">
+        <form id="contact-form" method="post">
           <div class="row">
             <div class="input-field col s12 m6">
               <input

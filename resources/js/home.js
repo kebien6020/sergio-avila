@@ -94,3 +94,38 @@ const parsedSearch = search
 if (parsedSearch['message-sent']) {
   sentModal.open()
 }
+
+// Contact form
+
+const form = document.getElementById('contact-form')
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+
+  const firstName = form.querySelector('[name=first_name]').value
+  const lastName = form.querySelector('[name=last_name]').value
+  const email = form.querySelector('[name=email]').value
+  const tel = form.querySelector('[name=tel]').value
+  const msg = form.querySelector('[name=mensaje]').value
+  const captchaToken = form.querySelector('[name=g-recaptcha-response]').value
+
+  const data = new FormData()
+
+  data.add('custom_U2764', firstName + ' ' + lastName)
+  data.add('Email', email)
+  data.add('custom_U2759', `Tel: ${tel}\n${msg}`)
+  data.add('g-recaptcha-response', captchaToken)
+
+
+  fetch('https://botonprint.com/scripts/form-u2756.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'Accept': 'application/json'
+    },
+    body: new URLSearchParams(data).toString(),
+  }).then(res => res.json())
+    .then(data => {
+      console.log(data)
+      window.location.href = '/?message-sent=1'
+    })
+})
