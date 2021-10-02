@@ -2,7 +2,7 @@
   <a href="/item/{{ $item->slug }}">
     <div class="card hoverable">
       <div class="card-image">
-        <img src="{!! $item->images->first()->url !!}" alt="Foto del {{ $item->name }}">
+        <img src="{!! optional($item->images->first())->url ?? '' !!}" alt="Foto del {{ $item->name }}">
       </div>
       <div class="card-content">
         <span class="card-title flow-text">{{ $item->name }}</span>
