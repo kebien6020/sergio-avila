@@ -14,7 +14,7 @@ class updateItems extends Command
      *
      * @var string
      */
-    protected $signature = 'app:updateItems {--m|max=} {--p|page=}';
+    protected $signature = 'app:updateItems {--m|max=} {--p|page=} {--y|yes}';
 
     /**
      * The console command description.
@@ -57,6 +57,7 @@ class updateItems extends Command
 
       $max = $this->option('max');
       $page = $this->option('page');
+      $autoConfirm = $this->option('yes');
 
       $allCodes = Item::select('code')->get()->pluck('code');
 
@@ -109,6 +110,15 @@ class updateItems extends Command
           $this->error($result);
           $error = true;
           continue;
+        }
+
+        if (
+            !is_array($result['fichaTecnicaResult']) ||
+            !array_key_exists('Ficha', $result['fichaTecnicaResult'])
+        ) {
+            $this->info("Skipping code = $code");
+            $this->info(var_export($result, true));
+            continue;
         }
 
         $raw = $result['fichaTecnicaResult']['Ficha'];
@@ -216,7 +226,7 @@ class updateItems extends Command
       $this->line('');
       $this->info('Se encontraron ' . $diffs->count() . ' items diferentes.');
       if ($diffs->count() > 0) {
-        if ($this->confirm('¿Guardar estos cambios?')) {
+        if ($autoConfirm || $this->confirm('¿Guardar estos cambios?')) {
           foreach ($diffs as $diff) {
             $item = Item::where('code', $diff->code)->get()->first();
             foreach ($diff as $key => $val) {
