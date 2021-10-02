@@ -29,6 +29,8 @@
       ['Bienestar', 'bienestar', [
         ['Anti-stress', 'anti-stress', 'fam' => [4]],
         ['Belleza', 'belleza', 'fam' => [9]],
+        ['Deportes', 'deportes', 'fam' => [38]],
+        ['Entretenimiento', 'entretenimiento', 'fam' => [37]],
         ['Salud', 'salud', 'fam' => [32]],
       ]],
       ['Herramientas', 'herramientas', 'fam' => [18]],

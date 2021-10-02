@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Request PHP 7.3
+    AddHandler fcgid-script .php 
+    FCGIWrapper "/dh/cgi-system/php73.cgi" .php
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

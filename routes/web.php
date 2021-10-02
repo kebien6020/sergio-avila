@@ -76,7 +76,7 @@ Route::get('/search', function (Request $req) {
     return view('search', [
       'items' => $items,
       'families' => $families,
-      'allFamilies' => Family::all(),
+      'allFamilies' => Family::all()->sortBy('name'),
     ]);
 });
 
